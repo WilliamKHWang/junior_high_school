@@ -1,246 +1,245 @@
 <!DOCTYPE html>
-<html lang="zh-TW" data-theme="doodle">
+<html lang="zh-TW" data-theme="fuggler-pink">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>爸爸的手繪教室 | 國中影音學習</title>
-  <meta name="description" content="爸爸親手打造的國中手繪動畫教室，用生動圖解學理化、數學，讓孩子輕鬆看懂每一個章節。">
+  <title>爸爸的手繪教室 | 國中影音學習 × 放克牙寶 牙齒怪</title>
+  <meta name="description" content="爸爸親手打造的國中手繪動畫教室，結合 ZURU FUGGLER 放克牙寶（暗巷夜貓）醜萌牙齒怪主題，用生動圖解學理化、數學，讓孩子輕鬆看懂每一個章節。">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Zen+Maru+Gothic:wght@400;500;700;900&family=Noto+Sans+TC:wght@400;500;700;900&family=Creepster&display=swap" rel="stylesheet">
   <style>
     /* =============================================
-       爸爸的手繪教室 - 多主題系統
-       6 個主題：每天自動切換，也可手動 Shuffle
+       爸爸的手繪教室 - ZURU FUGGLER 牙齒怪主題系統
+       6 隻暗巷夜貓（Alley Cats）醜萌牙齒怪專屬主題
        ============================================= */
 
-    /* ── 共用 token ── */
+    /* ── 共用 Token ── */
     :root {
-      --font-hand: 'Patrick Hand','Zen Maru Gothic','Noto Sans TC',cursive,sans-serif;
-      --font-body: 'Zen Maru Gothic','Noto Sans TC',system-ui,sans-serif;
+      --font-hand: 'Patrick Hand', 'Zen Maru Gothic', 'Noto Sans TC', cursive, sans-serif;
+      --font-body: 'Zen Maru Gothic', 'Noto Sans TC', system-ui, sans-serif;
+      --font-monster: 'Creepster', 'Patrick Hand', cursive;
       --radius-doodle: 255px 15px 225px 15px / 15px 225px 15px 255px;
-      --radius-card: 18px;
-      --transition: background 0.5s ease, color 0.5s ease, border-color 0.4s ease;
+      --radius-card: 20px;
+      --transition: background 0.4s ease, color 0.4s ease, border-color 0.35s ease, box-shadow 0.35s ease;
     }
 
     /* ══════════════════════════════════════════════
-       🎨 THEME 1：手繪白板（預設）
+       🐾 牙齒怪 1：粉紅睡衣怪 (Pink Slumber Cat)
+       睡衣排扣 · 垂眼皮 · 歪斜大白牙
     ══════════════════════════════════════════════ */
-    [data-theme="doodle"] {
-      --bg-canvas:      #fbf9f4;
+    [data-theme="fuggler-pink"] {
+      --bg-canvas:      #fff0f5;
       --bg-board:       #ffffff;
       --bg-card:        #ffffff;
-      --ink-primary:    #1e293b;
-      --ink-muted:      #64748b;
-      --ink-light:      #94a3b8;
-      --accent:         #0284c7;
-      --accent-bg:      #e0f2fe;
-      --accent2:        #e11d48;
-      --accent2-bg:     #ffe4e6;
-      --highlight:      #fef3c7;
-      --border:         2.5px solid #1e293b;
-      --shadow:         5px 7px 0px rgba(30,41,59,0.85);
-      --shadow-hover:   7px 9px 0px rgba(30,41,59,1);
-      --bg-pattern:     radial-gradient(#cbd5e1 1.2px, transparent 1.2px);
-      --bg-pattern2:    linear-gradient(to right, rgba(226,232,240,0.3) 1px, transparent 1px);
-      --pattern-size:   24px 24px, 120px 120px;
+      --ink-primary:    #831843;
+      --ink-muted:      #9d174d;
+      --ink-light:      #f472b6;
+      --accent:         #db2777;
+      --accent-bg:      #fce7f3;
+      --accent2:        #9333ea;
+      --accent2-bg:     #fae8ff;
+      --highlight:      #fef08a;
+      --border:         2.5px solid #db2777;
+      --shadow:         5px 6px 0px rgba(219, 39, 119, 0.35);
+      --shadow-hover:   7px 9px 0px rgba(219, 39, 119, 0.55);
+      --bg-pattern:     radial-gradient(#fbcfe8 1.5px, transparent 1.5px);
+      --bg-pattern2:    radial-gradient(#f472b6 1px, transparent 1px);
+      --pattern-size:   24px 24px, 48px 48px;
+      --hero-bg:        #ffffff;
+      --pill-border:    #fbcfe8;
+      --science-hdr:    #fce7f3;
+      --science-card:   #fff5f8;
+      --science-color:  #db2777;
+      --math-hdr:       #fae8ff;
+      --math-card:      #fdf4ff;
+      --math-color:     #9333ea;
+      --tab-bg:         #db2777;
+      --tab-color:      #ffffff;
+      --badge-glow:     rgba(219, 39, 119, 0.4);
+    }
+
+    /* ══════════════════════════════════════════════
+       🐾 牙齒怪 2：暹羅焦糖怪 (Mocha Siamese Cat)
+       黑炭臉頰 · 烤棉花糖焦糖色 · 瞪大圓眼
+    ══════════════════════════════════════════════ */
+    [data-theme="fuggler-siamese"] {
+      --bg-canvas:      #f7f2ec;
+      --bg-board:       #ffffff;
+      --bg-card:        #ffffff;
+      --ink-primary:    #3e2723;
+      --ink-muted:      #5d4037;
+      --ink-light:      #8d6e63;
+      --accent:         #795548;
+      --accent-bg:      #efebe9;
+      --accent2:        #d97706;
+      --accent2-bg:     #fef3c7;
+      --highlight:      #ffe082;
+      --border:         2.5px solid #4e342e;
+      --shadow:         5px 6px 0px rgba(78, 52, 46, 0.4);
+      --shadow-hover:   7px 9px 0px rgba(78, 52, 46, 0.65);
+      --bg-pattern:     radial-gradient(#d7ccc8 1.5px, transparent 1.5px);
+      --bg-pattern2:    linear-gradient(45deg, rgba(141, 110, 99, 0.05) 25%, transparent 25%);
+      --pattern-size:   26px 26px, 52px 52px;
+      --hero-bg:        #ffffff;
+      --pill-border:    #d7ccc8;
+      --science-hdr:    #efebe9;
+      --science-card:   #faf7f5;
+      --science-color:  #5d4037;
+      --math-hdr:       #fef3c7;
+      --math-card:      #fffdfa;
+      --math-color:     #b45309;
+      --tab-bg:         #4e342e;
+      --tab-color:      #ffffff;
+      --badge-glow:     rgba(121, 85, 72, 0.4);
+    }
+
+    /* ══════════════════════════════════════════════
+       🐾 牙齒怪 3：午夜藍毛怪 (Midnight Navy Cat)
+       暗夜巷弄深藍 · 粉紅牙齒項鍊 · 賽博龐克微光
+    ══════════════════════════════════════════════ */
+    [data-theme="fuggler-blue"] {
+      --bg-canvas:      #0b0d1e;
+      --bg-board:       #12152f;
+      --bg-card:        #181c3e;
+      --ink-primary:    #e0e7ff;
+      --ink-muted:      #a5b4fc;
+      --ink-light:      #6366f1;
+      --accent:         #f43f5e;        /* 項鍊粉紅 */
+      --accent-bg:      #3d0f1f;
+      --accent2:        #38bdf8;        /* 霓虹藍 */
+      --accent2-bg:     #082f49;
+      --highlight:      #1e1b4b;
+      --border:         2.5px solid #6366f1;
+      --shadow:         0 0 16px rgba(99, 102, 241, 0.4), 4px 6px 0 rgba(0, 0, 0, 0.85);
+      --shadow-hover:   0 0 24px rgba(244, 63, 94, 0.6), 6px 8px 0 rgba(0, 0, 0, 0.95);
+      --bg-pattern:     radial-gradient(rgba(129, 140, 248, 0.2) 1.5px, transparent 1.5px);
+      --bg-pattern2:    repeating-linear-gradient(90deg, transparent, transparent 36px, rgba(99, 102, 241, 0.05) 36px, rgba(99, 102, 241, 0.05) 37px);
+      --pattern-size:   28px 28px, auto;
+      --hero-bg:        #12152f;
+      --pill-border:    #4338ca;
+      --science-hdr:    #181c3e;
+      --science-card:   #141736;
+      --science-color:  #818cf8;
+      --math-hdr:       #2a1024;
+      --math-card:      #200c1b;
+      --math-color:     #f43f5e;
+      --tab-bg:         #6366f1;
+      --tab-color:      #ffffff;
+      --badge-glow:     rgba(99, 102, 241, 0.6);
+    }
+
+    /* ══════════════════════════════════════════════
+       🐾 牙齒怪 4：灰紋落腮鬍 (Striped Grizzle Cat)
+       虎斑灰條紋 · 白胸毛落腮鬍 · 琥珀黃眼露牙
+    ══════════════════════════════════════════════ */
+    [data-theme="fuggler-gray"] {
+      --bg-canvas:      #141923;
+      --bg-board:       #1b2230;
+      --bg-card:        #232c3d;
+      --ink-primary:    #f8fafc;
+      --ink-muted:      #cbd5e1;
+      --ink-light:      #64748b;
+      --accent:         #eab308;        /* 琥珀金眼 */
+      --accent-bg:      #3f3107;
+      --accent2:        #38bdf8;        /* 銀灰藍 */
+      --accent2-bg:     #0c2e47;
+      --highlight:      #1e293b;
+      --border:         2.5px solid #94a3b8;
+      --shadow:         0 0 14px rgba(234, 179, 8, 0.25), 4px 6px 0 rgba(0, 0, 0, 0.85);
+      --shadow-hover:   0 0 22px rgba(234, 179, 8, 0.5), 6px 8px 0 rgba(0, 0, 0, 0.95);
+      --bg-pattern:     radial-gradient(rgba(148, 163, 184, 0.18) 1.5px, transparent 1.5px);
+      --bg-pattern2:    repeating-linear-gradient(45deg, transparent, transparent 20px, rgba(148, 163, 184, 0.03) 20px, rgba(148, 163, 184, 0.03) 40px);
+      --pattern-size:   26px 26px, auto;
+      --hero-bg:        #1b2230;
+      --pill-border:    #475569;
+      --science-hdr:    #232c3d;
+      --science-card:   #1d2535;
+      --science-color:  #facc15;
+      --math-hdr:       #0e2d42;
+      --math-card:      #112233;
+      --math-color:     #38bdf8;
+      --tab-bg:         #94a3b8;
+      --tab-color:      #0f172a;
+      --badge-glow:     rgba(234, 179, 8, 0.5);
+    }
+
+    /* ══════════════════════════════════════════════
+       🐾 牙齒怪 5：鈕扣眼白怪 (Button-Eye Snow Cat)
+       蓬鬆純白雪球 · 異色鈕扣眼 · 甜粉蝴蝶結
+    ══════════════════════════════════════════════ */
+    [data-theme="fuggler-white"] {
+      --bg-canvas:      #f8fafc;
+      --bg-board:       #ffffff;
+      --bg-card:        #ffffff;
+      --ink-primary:    #0f172a;
+      --ink-muted:      #334155;
+      --ink-light:      #64748b;
+      --accent:         #ec4899;        /* 蝴蝶結粉 */
+      --accent-bg:      #fce7f3;
+      --accent2:        #6366f1;        /* 鈕扣眼縫線藍 */
+      --accent2-bg:     #e0e7ff;
+      --highlight:      #fef08a;
+      --border:         2.5px solid #0f172a;
+      --shadow:         5px 7px 0px rgba(15, 23, 42, 0.85);
+      --shadow-hover:   7px 9px 0px rgba(15, 23, 42, 1);
+      --bg-pattern:     radial-gradient(#cbd5e1 1.5px, transparent 1.5px);
+      --bg-pattern2:    radial-gradient(#f472b6 1px, transparent 1px);
+      --pattern-size:   24px 24px, 48px 48px;
       --hero-bg:        #ffffff;
       --pill-border:    #cbd5e1;
-      --science-hdr:    #e0f2fe;
-      --science-card:   #f0f9ff;
-      --science-color:  #0284c7;
-      --math-hdr:       #d1fae5;
-      --math-card:      #f0fdf4;
-      --math-color:     #059669;
-      --logo-emoji:     "✏️";
-      --theme-name:     "✏️ 手繪白板";
-      --tab-bg:         #1e293b;
-      --tab-color:      white;
-    }
-
-    /* ══════════════════════════════════════════════
-       🌌 THEME 2：宇宙星空
-    ══════════════════════════════════════════════ */
-    [data-theme="space"] {
-      --bg-canvas:      #0f0c29;
-      --bg-board:       #1a1650;
-      --bg-card:        #1e1b55;
-      --ink-primary:    #e2e8f0;
-      --ink-muted:      #94a3b8;
-      --ink-light:      #64748b;
-      --accent:         #818cf8;
-      --accent-bg:      #312e81;
-      --accent2:        #f472b6;
-      --accent2-bg:     #4a1942;
-      --highlight:      #312e81;
-      --border:         2px solid #818cf8;
-      --shadow:         0 0 16px rgba(129,140,248,0.4), 4px 6px 0 rgba(0,0,0,0.6);
-      --shadow-hover:   0 0 24px rgba(129,140,248,0.7), 6px 8px 0 rgba(0,0,0,0.8);
-      --bg-pattern:     radial-gradient(rgba(255,255,255,0.15) 1px, transparent 1px);
-      --bg-pattern2:    radial-gradient(rgba(248,180,246,0.08) 2px, transparent 2px);
-      --pattern-size:   30px 30px, 90px 90px;
-      --hero-bg:        #1a1650;
-      --pill-border:    #4338ca;
-      --science-hdr:    #1e1b55;
-      --science-card:   #1a1650;
-      --science-color:  #818cf8;
-      --math-hdr:       #2d1b69;
-      --math-card:      #1e1b55;
-      --math-color:     #c084fc;
-      --logo-emoji:     "🚀";
-      --theme-name:     "🌌 宇宙星空";
-      --tab-bg:         #818cf8;
-      --tab-color:      #0f0c29;
-    }
-
-    /* ══════════════════════════════════════════════
-       🍭 THEME 3：糖果樂園
-    ══════════════════════════════════════════════ */
-    [data-theme="candy"] {
-      --bg-canvas:      #fff0f6;
-      --bg-board:       #ffffff;
-      --bg-card:        #fff5f9;
-      --ink-primary:    #831843;
-      --ink-muted:      #be185d;
-      --ink-light:      #f9a8d4;
-      --accent:         #ec4899;
-      --accent-bg:      #fce7f3;
-      --accent2:        #a855f7;
-      --accent2-bg:     #f3e8ff;
-      --highlight:      #fef9c3;
-      --border:         2.5px solid #ec4899;
-      --shadow:         4px 6px 0 rgba(236,72,153,0.4);
-      --shadow-hover:   6px 8px 0 rgba(236,72,153,0.6);
-      --bg-pattern:     radial-gradient(#fda4af 1.5px, transparent 1.5px);
-      --bg-pattern2:    radial-gradient(#c4b5fd 1px, transparent 1px);
-      --pattern-size:   20px 20px, 40px 40px;
-      --hero-bg:        #ffffff;
-      --pill-border:    #f9a8d4;
       --science-hdr:    #fce7f3;
-      --science-card:   #fff0f9;
-      --science-color:  #ec4899;
-      --math-hdr:       #f3e8ff;
-      --math-card:      #faf5ff;
-      --math-color:     #a855f7;
-      --logo-emoji:     "🍭";
-      --theme-name:     "🍭 糖果樂園";
-      --tab-bg:         #ec4899;
-      --tab-color:      white;
+      --science-card:   #fff7fa;
+      --science-color:  #db2777;
+      --math-hdr:       #e0e7ff;
+      --math-card:      #f7f8ff;
+      --math-color:     #4f46e5;
+      --tab-bg:         #0f172a;
+      --tab-color:      #ffffff;
+      --badge-glow:     rgba(236, 72, 153, 0.4);
     }
 
     /* ══════════════════════════════════════════════
-       🌿 THEME 4：森林探險
+       🐾 牙齒怪 6：橘斑八字鬍 (Ginger Mustache Cat)
+       熱血橘黃虎斑 · 蓬鬆大八字鬍 · 爆棚招牌暴牙
     ══════════════════════════════════════════════ */
-    [data-theme="forest"] {
-      --bg-canvas:      #f0fdf4;
+    [data-theme="fuggler-orange"] {
+      --bg-canvas:      #fff8f0;
       --bg-board:       #ffffff;
-      --bg-card:        #f0fdf4;
-      --ink-primary:    #14532d;
-      --ink-muted:      #15803d;
-      --ink-light:      #86efac;
-      --accent:         #16a34a;
-      --accent-bg:      #dcfce7;
-      --accent2:        #ca8a04;
-      --accent2-bg:     #fef9c3;
-      --highlight:      #fefce8;
-      --border:         2.5px solid #14532d;
-      --shadow:         5px 7px 0 rgba(20,83,45,0.6);
-      --shadow-hover:   7px 9px 0 rgba(20,83,45,0.85);
-      --bg-pattern:     radial-gradient(#86efac 1.2px, transparent 1.2px);
-      --bg-pattern2:    linear-gradient(135deg, rgba(134,239,172,0.15) 25%, transparent 25%);
-      --pattern-size:   28px 28px, 56px 56px;
+      --bg-card:        #ffffff;
+      --ink-primary:    #7c2d12;
+      --ink-muted:      #9a3412;
+      --ink-light:      #ea580c;
+      --accent:         #ea580c;
+      --accent-bg:      #ffedd5;
+      --accent2:        #d97706;
+      --accent2-bg:     #fef3c7;
+      --highlight:      #fde047;
+      --border:         2.5px solid #9a3412;
+      --shadow:         5px 6px 0px rgba(154, 52, 18, 0.4);
+      --shadow-hover:   7px 9px 0px rgba(154, 52, 18, 0.65);
+      --bg-pattern:     radial-gradient(#fed7aa 1.5px, transparent 1.5px);
+      --bg-pattern2:    radial-gradient(#f59e0b 1px, transparent 1px);
+      --pattern-size:   24px 24px, 48px 48px;
       --hero-bg:        #ffffff;
-      --pill-border:    #86efac;
-      --science-hdr:    #dcfce7;
-      --science-card:   #f0fdf4;
-      --science-color:  #16a34a;
-      --math-hdr:       #fef9c3;
-      --math-card:      #fefce8;
-      --math-color:     #ca8a04;
-      --logo-emoji:     "🌿";
-      --theme-name:     "🌿 森林探險";
-      --tab-bg:         #14532d;
-      --tab-color:      white;
+      --pill-border:    #fdba74;
+      --science-hdr:    #ffedd5;
+      --science-card:   #fffaf5;
+      --science-color:  #c2410c;
+      --math-hdr:       #fef3c7;
+      --math-card:      #fffdf7;
+      --math-color:     #b45309;
+      --tab-bg:         #9a3412;
+      --tab-color:      #ffffff;
+      --badge-glow:     rgba(234, 88, 12, 0.4);
     }
 
     /* ══════════════════════════════════════════════
-       😸 THEME 5：暗巷夜貓 × FUGGLER（放克牙寶）
-       靈感：ZURU FUGGLER Alley Cats — 醜萌流浪貓
-       深夜街頭 · 霓虹 · 人類牙齒 · 毛茸茸
-    ══════════════════════════════════════════════ */
-    [data-theme="alleycat"] {
-      --bg-canvas:      #0d0d12;
-      --bg-board:       #111118;
-      --bg-card:        #18181f;
-      --ink-primary:    #f1f5f9;
-      --ink-muted:      #94a3b8;
-      --ink-light:      #475569;
-      --accent:         #39ff14;        /* 霓虹貓眼綠 */
-      --accent-bg:      #0a2a0a;
-      --accent2:        #ff6b35;        /* 街燈橘 */
-      --accent2-bg:     #2a1200;
-      --highlight:      #1a1a0a;
-      --border:         2px solid #39ff14;
-      --shadow:         0 0 12px rgba(57,255,20,0.35), 4px 6px 0 rgba(0,0,0,0.9);
-      --shadow-hover:   0 0 24px rgba(57,255,20,0.6), 6px 8px 0 rgba(0,0,0,1);
-      --bg-pattern:     repeating-linear-gradient(0deg, transparent, transparent 40px, rgba(57,255,20,0.03) 40px, rgba(57,255,20,0.03) 41px);
-      --bg-pattern2:    repeating-linear-gradient(90deg, transparent, transparent 40px, rgba(57,255,20,0.02) 40px, rgba(57,255,20,0.02) 41px);
-      --pattern-size:   auto, auto;
-      --hero-bg:        #111118;
-      --pill-border:    #39ff14;
-      --science-hdr:    #0a1a0a;
-      --science-card:   #0d160d;
-      --science-color:  #39ff14;
-      --math-hdr:       #1a0e00;
-      --math-card:      #150c00;
-      --math-color:     #ff6b35;
-      --logo-emoji:     "😸";
-      --theme-name:     "😸 暗巷夜貓";
-      --tab-bg:         #39ff14;
-      --tab-color:      #0d0d12;
-    }
-
-    /* ══════════════════════════════════════════════
-       🔥 THEME 6：火焰能量
-    ══════════════════════════════════════════════ */
-    [data-theme="fire"] {
-      --bg-canvas:      #1c0a00;
-      --bg-board:       #2a0f00;
-      --bg-card:        #2a0f00;
-      --ink-primary:    #fed7aa;
-      --ink-muted:      #fb923c;
-      --ink-light:      #7c2d12;
-      --accent:         #f97316;
-      --accent-bg:      #431407;
-      --accent2:        #fbbf24;
-      --accent2-bg:     #3b1c00;
-      --highlight:      #3b1c00;
-      --border:         2px solid #f97316;
-      --shadow:         0 0 12px rgba(249,115,22,0.4), 4px 6px 0 rgba(0,0,0,0.8);
-      --shadow-hover:   0 0 24px rgba(249,115,22,0.7), 6px 8px 0 rgba(0,0,0,1);
-      --bg-pattern:     radial-gradient(rgba(249,115,22,0.12) 1.5px, transparent 1.5px);
-      --bg-pattern2:    radial-gradient(rgba(251,191,36,0.06) 2px, transparent 2px);
-      --pattern-size:   24px 24px, 60px 60px;
-      --hero-bg:        #2a0f00;
-      --pill-border:    #9a3412;
-      --science-hdr:    #431407;
-      --science-card:   #2a0f00;
-      --science-color:  #f97316;
-      --math-hdr:       #3b1c00;
-      --math-card:      #2a1500;
-      --math-color:     #fbbf24;
-      --logo-emoji:     "🔥";
-      --theme-name:     "🔥 火焰能量";
-      --tab-bg:         #f97316;
-      --tab-color:      white;
-    }
-
-    /* ══════════════════════════════════════════════
-       全域樣式（使用 CSS 變數）
+       全域基礎設定
     ══════════════════════════════════════════════ */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    html { transition: var(--transition); }
+    html { transition: var(--transition); scroll-behavior: smooth; }
 
     body {
       font-family: var(--font-body);
@@ -249,32 +248,74 @@
       background-size: var(--pattern-size);
       color: var(--ink-primary);
       min-height: 100vh;
-      padding: 24px 20px 60px;
-      transition: background-color 0.5s ease, color 0.4s ease;
+      padding: 20px 20px 70px;
+      transition: background-color 0.45s ease, color 0.4s ease;
+      position: relative;
+      overflow-x: hidden;
     }
 
-    /* ── 主題切換 Bar ── */
-    .theme-bar {
+    /* ══════════════════════════════════════════════
+       牙齒怪戰隊選擇列（Fuggler Roster Bar）
+    ══════════════════════════════════════════════ */
+    .fuggler-bar-wrapper {
       max-width: 960px;
-      margin: 0 auto 16px;
+      margin: 0 auto 20px;
+      background: var(--bg-board);
+      border: var(--border);
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow);
+      padding: 14px 20px;
+      transition: var(--transition);
+    }
+
+    .fuggler-bar-top {
       display: flex;
       align-items: center;
-      justify-content: flex-end;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+    }
+
+    .fuggler-brand {
+      display: flex;
+      align-items: center;
       gap: 10px;
     }
-    .theme-name-pill {
-      font-family: var(--font-hand);
-      font-size: 0.8rem;
-      font-weight: 700;
-      color: var(--ink-muted);
-      letter-spacing: 0.02em;
-      opacity: 0.85;
+
+    .fuggler-tag {
+      font-family: var(--font-monster);
+      font-size: 1.15rem;
+      letter-spacing: 0.05em;
+      color: var(--accent);
+      text-shadow: 1px 1px 0 rgba(0,0,0,0.15);
+      display: flex;
+      align-items: center;
+      gap: 6px;
     }
+
+    .theme-active-name {
+      font-family: var(--font-hand);
+      font-size: 0.95rem;
+      font-weight: 700;
+      background: var(--accent-bg);
+      color: var(--accent);
+      padding: 4px 12px;
+      border-radius: 999px;
+      border: 1.5px solid var(--accent);
+    }
+
+    .bar-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
     #btnShuffle {
       font-family: var(--font-hand);
-      font-size: 0.82rem;
+      font-size: 0.9rem;
       font-weight: 700;
-      padding: 6px 14px;
+      padding: 7px 16px;
       background: var(--accent-bg);
       color: var(--accent);
       border: 2px solid var(--accent);
@@ -284,50 +325,175 @@
       align-items: center;
       gap: 6px;
       transition: all 0.15s ease;
-      box-shadow: 2px 3px 0 rgba(0,0,0,0.3);
-    }
-    #btnShuffle:hover {
-      transform: translate(-1px,-1px) rotate(-2deg);
-      box-shadow: 3px 5px 0 rgba(0,0,0,0.4);
-    }
-    #btnShuffle:active {
-      transform: translate(1px,1px);
-      box-shadow: 1px 1px 0 rgba(0,0,0,0.3);
+      box-shadow: 2px 3px 0 rgba(0,0,0,0.25);
+      white-space: nowrap;
     }
 
-    /* ── Header ── */
-    header {
-      max-width: 960px;
-      margin: 0 auto 40px;
+    #btnShuffle:hover {
+      transform: translate(-1px, -1px) rotate(-2deg);
+      box-shadow: 3px 5px 0 rgba(0,0,0,0.35);
+    }
+
+    #btnShuffle:active {
+      transform: translate(1px, 1px);
+      box-shadow: 1px 1px 0 rgba(0,0,0,0.2);
+    }
+
+    /* 6 隻牙齒怪頭像按鈕列 */
+    .fuggler-roster {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 10px;
+      list-style: none;
+    }
+
+    .roster-btn {
+      background: var(--bg-canvas);
+      border: 2px solid var(--pill-border);
+      border-radius: 14px;
+      padding: 8px 6px;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+      position: relative;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .roster-btn:hover {
+      transform: translateY(-4px) scale(1.05);
+      border-color: var(--accent);
+      box-shadow: 0 6px 14px var(--badge-glow);
+    }
+
+    .roster-btn.active {
+      border-color: var(--accent);
+      background: var(--accent-bg);
+      box-shadow: 0 0 0 2px var(--accent), 0 6px 16px var(--badge-glow);
+      transform: translateY(-2px);
+    }
+
+    .roster-btn.active::after {
+      content: '🦷';
+      position: absolute;
+      top: -6px;
+      right: -4px;
+      font-size: 0.85rem;
+      animation: tooth-bounce 1s ease-in-out infinite alternate;
+    }
+
+    @keyframes tooth-bounce {
+      0% { transform: translateY(0) rotate(0deg); }
+      100% { transform: translateY(-3px) rotate(15deg); }
+    }
+
+    .roster-avatar-box {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.85);
       display: flex;
       align-items: center;
-      gap: 16px;
+      justify-content: center;
+      overflow: hidden;
+      border: 1.5px solid rgba(0, 0, 0, 0.1);
+      box-shadow: inset 0 2px 4px rgba(0,0,0,0.08);
+      position: relative;
     }
-    .logo-icon {
-      font-size: 3rem;
-      line-height: 1;
-      filter: drop-shadow(2px 3px 0 rgba(0,0,0,0.25));
-      animation: wiggle 3s ease-in-out infinite;
-      transition: all 0.4s ease;
+
+    .roster-avatar-img {
+      width: 90%;
+      height: 90%;
+      object-fit: contain;
+      filter: drop-shadow(0 2px 3px rgba(0,0,0,0.2));
+      transition: transform 0.2s ease;
     }
-    @keyframes wiggle {
-      0%,100% { transform: rotate(-4deg); }
-      50%      { transform: rotate(4deg); }
+
+    .roster-btn:hover .roster-avatar-img {
+      transform: scale(1.15) rotate(4deg);
     }
-    .header-text h1 {
+
+    .roster-name {
       font-family: var(--font-hand);
-      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      font-size: 0.76rem;
+      font-weight: 700;
+      white-space: nowrap;
+      color: var(--ink-primary);
+      text-align: center;
+      line-height: 1.1;
+    }
+
+    /* ══════════════════════════════════════════════
+       Header
+    ══════════════════════════════════════════════ */
+    header {
+      max-width: 960px;
+      margin: 0 auto 32px;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .logo-box {
+      width: 72px;
+      height: 72px;
+      border-radius: var(--radius-doodle);
+      background: var(--bg-board);
+      border: var(--border);
+      box-shadow: var(--shadow);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      flex-shrink: 0;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .logo-box:hover {
+      transform: scale(1.08) rotate(-4deg);
+    }
+
+    .logo-cat-img {
+      width: 82%;
+      height: 82%;
+      object-fit: contain;
+      animation: cat-bob 3s ease-in-out infinite;
+    }
+
+    @keyframes cat-bob {
+      0%, 100% { transform: translateY(0) rotate(-2deg); }
+      50%      { transform: translateY(-4px) rotate(3deg); }
+    }
+
+    .logo-tooth-badge {
+      position: absolute;
+      bottom: -4px;
+      right: -4px;
+      font-size: 1.1rem;
+      filter: drop-shadow(1px 2px 0 rgba(0,0,0,0.3));
+    }
+
+    .header-text h1 {
+      font-family: var(--font-monster), var(--font-hand);
+      font-size: clamp(1.6rem, 4vw, 2.3rem);
       font-weight: 900;
-      line-height: 1.2;
+      line-height: 1.25;
       color: var(--ink-primary);
       position: relative;
       display: inline-block;
+      letter-spacing: 0.03em;
       transition: color 0.4s;
     }
+
     .header-text h1 .underline {
       position: relative;
       z-index: 1;
     }
+
     .header-text h1 .underline::after {
       content: '';
       position: absolute;
@@ -338,13 +504,16 @@
       border-radius: 4px;
       transition: background 0.4s;
     }
+
     .header-text p {
       font-size: 0.95rem;
       color: var(--ink-muted);
       margin-top: 4px;
       font-family: var(--font-hand);
+      font-weight: 700;
       transition: color 0.4s;
     }
+
     .stamp-badge {
       margin-left: auto;
       background: var(--accent2-bg);
@@ -353,77 +522,137 @@
       border-radius: var(--radius-doodle);
       padding: 8px 16px;
       font-family: var(--font-hand);
-      font-size: 0.85rem;
-      font-weight: 700;
+      font-size: 0.88rem;
+      font-weight: 900;
       color: var(--accent2);
       transform: rotate(2deg);
-      box-shadow: 3px 4px 0 rgba(0,0,0,0.3);
+      box-shadow: 3px 4px 0 rgba(0,0,0,0.25);
       white-space: nowrap;
       transition: all 0.4s;
     }
 
-    /* ── 暗巷夜貓特殊字體 ── */
-    [data-theme="alleycat"] .header-text h1 {
-      font-family: 'Creepster', 'Patrick Hand', cursive;
-      text-shadow: 0 0 12px rgba(57,255,20,0.5);
-      letter-spacing: 0.04em;
-    }
-    [data-theme="alleycat"] .stamp-badge {
-      animation: neon-pulse 1.8s ease-in-out infinite;
-    }
-    @keyframes neon-pulse {
-      0%,100% { box-shadow: 3px 4px 0 rgba(0,0,0,0.6), 0 0 8px rgba(255,107,53,0.4); }
-      50%      { box-shadow: 3px 4px 0 rgba(0,0,0,0.6), 0 0 20px rgba(255,107,53,0.8); }
-    }
-    [data-theme="alleycat"] .logo-icon {
-      animation: cat-wiggle 2s ease-in-out infinite;
-      filter: drop-shadow(0 0 8px rgba(57,255,20,0.6));
-    }
-    @keyframes cat-wiggle {
-      0%   { transform: rotate(-6deg) scale(1); }
-      30%  { transform: rotate(8deg) scale(1.05); }
-      60%  { transform: rotate(-4deg) scale(1); }
-      80%  { transform: rotate(6deg) scale(1.03); }
-      100% { transform: rotate(-6deg) scale(1); }
-    }
-
-    /* ── Hero Banner ── */
+    /* ══════════════════════════════════════════════
+       Hero Banner（互動牙齒怪對話區）
+    ══════════════════════════════════════════════ */
     .hero {
       max-width: 960px;
-      margin: 0 auto 48px;
+      margin: 0 auto 40px;
       background: var(--hero-bg);
       border: var(--border);
       border-radius: var(--radius-card);
       box-shadow: var(--shadow);
-      padding: 32px 36px;
+      padding: 28px 32px;
       position: relative;
       overflow: hidden;
-      transition: background 0.4s, border-color 0.4s, box-shadow 0.4s;
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 24px;
+      align-items: center;
+      transition: var(--transition);
     }
-    .hero-emoji {
-      position: absolute;
-      right: 32px; top: 24px;
-      font-size: 5rem;
-      opacity: 0.09;
-      transition: all 0.4s;
-      pointer-events: none;
+
+    /* 牙齒怪展示主體 */
+    .hero-mascot-wrapper {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .hero-mascot-img {
+      width: 125px;
+      height: 140px;
+      object-fit: contain;
+      filter: drop-shadow(0 6px 12px rgba(0,0,0,0.3));
+      transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
       user-select: none;
     }
+
+    .hero-mascot-wrapper:hover .hero-mascot-img {
+      transform: scale(1.1) rotate(4deg);
+    }
+
+    .hero-mascot-wrapper:active .hero-mascot-img {
+      transform: scale(0.95) rotate(-6deg);
+    }
+
+    .mascot-click-hint {
+      margin-top: 6px;
+      font-family: var(--font-hand);
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--ink-muted);
+      background: var(--bg-canvas);
+      padding: 2px 8px;
+      border-radius: 999px;
+      border: 1px dashed var(--pill-border);
+      white-space: nowrap;
+    }
+
+    /* 對話內容 */
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-bubble-box {
+      background: var(--bg-canvas);
+      border: 2px solid var(--pill-border);
+      border-radius: 16px;
+      padding: 16px 20px;
+      position: relative;
+      margin-bottom: 16px;
+      box-shadow: 2px 3px 0 rgba(0,0,0,0.15);
+    }
+
+    .hero-bubble-box::before {
+      content: '';
+      position: absolute;
+      left: -10px;
+      top: 24px;
+      width: 0;
+      height: 0;
+      border-top: 8px solid transparent;
+      border-bottom: 8px solid transparent;
+      border-right: 10px solid var(--pill-border);
+    }
+
+    .hero-bubble-box::after {
+      content: '';
+      position: absolute;
+      left: -7px;
+      top: 24px;
+      width: 0;
+      height: 0;
+      border-top: 8px solid transparent;
+      border-bottom: 8px solid transparent;
+      border-right: 9px solid var(--bg-canvas);
+    }
+
     .hero-title {
       font-family: var(--font-hand);
-      font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+      font-size: clamp(1.05rem, 2.2vw, 1.3rem);
       font-weight: 700;
-      line-height: 1.7;
+      line-height: 1.65;
       color: var(--ink-primary);
       transition: color 0.4s;
     }
-    .hero-title .hi { color: var(--accent); transition: color 0.4s; }
+
+    .hero-title .hi {
+      color: var(--accent);
+      font-size: 1.2em;
+      font-weight: 900;
+      transition: color 0.4s;
+    }
+
     .hero-stats {
       display: flex;
-      gap: 20px;
-      margin-top: 20px;
+      gap: 12px;
       flex-wrap: wrap;
     }
+
     .stat-pill {
       display: flex;
       align-items: center;
@@ -438,9 +667,16 @@
       color: var(--ink-primary);
       transition: all 0.4s;
     }
-    .stat-pill .dot { width: 10px; height: 10px; border-radius: 50%; }
 
-    /* ── Section Title ── */
+    .stat-pill .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+
+    /* ══════════════════════════════════════════════
+       Section Title
+    ══════════════════════════════════════════════ */
     .section-title {
       max-width: 960px;
       margin: 0 auto 20px;
@@ -448,26 +684,34 @@
       align-items: center;
       gap: 12px;
     }
+
     .section-title .tab-label {
-      font-family: var(--font-hand);
-      font-size: 1.25rem;
+      font-family: var(--font-monster), var(--font-hand);
+      font-size: 1.3rem;
       font-weight: 900;
       background: var(--tab-bg);
       color: var(--tab-color);
-      padding: 6px 20px;
-      border-radius: 8px 8px 0 0;
+      padding: 6px 22px;
+      border-radius: 12px 12px 0 0;
+      letter-spacing: 0.05em;
       transition: background 0.4s, color 0.4s;
     }
+
     .section-title .grade-label {
       font-family: var(--font-hand);
-      font-size: 0.9rem;
+      font-size: 0.95rem;
       color: var(--ink-muted);
       font-weight: 700;
       transition: color 0.4s;
     }
 
-    /* ── Subject Groups ── */
-    .subjects-wrapper { max-width: 960px; margin: 0 auto 48px; }
+    /* ══════════════════════════════════════════════
+       Subject Groups
+    ══════════════════════════════════════════════ */
+    .subjects-wrapper {
+      max-width: 960px;
+      margin: 0 auto 48px;
+    }
 
     .subject-group {
       background: var(--bg-board);
@@ -476,7 +720,7 @@
       box-shadow: var(--shadow);
       margin-bottom: 32px;
       overflow: hidden;
-      transition: background 0.4s, border-color 0.4s, box-shadow 0.4s;
+      transition: var(--transition);
     }
 
     .subject-header {
@@ -487,35 +731,44 @@
       border-bottom: 2px solid var(--pill-border);
       transition: background 0.4s, border-color 0.4s;
     }
+
     .subject-icon {
       font-size: 2rem;
-      width: 52px; height: 52px;
+      width: 54px;
+      height: 54px;
       border-radius: 14px;
       border: var(--border);
-      display: flex; align-items: center; justify-content: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       flex-shrink: 0;
       background: var(--bg-canvas);
-      box-shadow: 3px 4px 0 rgba(0,0,0,0.3);
+      box-shadow: 3px 4px 0 rgba(0,0,0,0.25);
       transition: all 0.4s;
     }
+
     .subject-info h2 {
-      font-family: var(--font-hand);
-      font-size: 1.3rem;
+      font-family: var(--font-monster), var(--font-hand);
+      font-size: 1.45rem;
       font-weight: 900;
+      letter-spacing: 0.04em;
       transition: color 0.4s;
     }
+
     .subject-info p {
-      font-size: 0.82rem;
+      font-size: 0.85rem;
       color: var(--ink-muted);
       margin-top: 2px;
+      font-family: var(--font-hand);
       transition: color 0.4s;
     }
+
     .subject-count {
       margin-left: auto;
       font-family: var(--font-hand);
-      font-size: 0.82rem;
-      font-weight: 700;
-      padding: 4px 12px;
+      font-size: 0.85rem;
+      font-weight: 900;
+      padding: 4px 14px;
       border-radius: 999px;
       border: 2px solid;
       background: var(--bg-canvas);
@@ -534,7 +787,9 @@
     .group-math .subject-count  { color: var(--math-color); border-color: var(--math-color); }
     .group-math .lesson-card    { background: var(--math-card); }
 
-    /* ── Lesson Cards ── */
+    /* ══════════════════════════════════════════════
+       Lesson Cards
+    ══════════════════════════════════════════════ */
     .lessons-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
@@ -544,186 +799,298 @@
 
     .lesson-card {
       border: var(--border);
-      border-radius: 16px;
-      padding: 20px;
+      border-radius: 18px;
+      padding: 22px;
       cursor: pointer;
       text-decoration: none;
       color: var(--ink-primary);
-      transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.4s, border-color 0.4s;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.4s, border-color 0.4s;
       box-shadow: var(--shadow);
       position: relative;
       display: block;
       overflow: hidden;
     }
+
     .lesson-card:hover {
-      transform: translate(-2px, -2px);
+      transform: translate(-3px, -3px) rotate(-0.5deg);
       box-shadow: var(--shadow-hover);
     }
+
     .lesson-card:active {
       transform: translate(2px, 2px);
     }
+
     .lesson-card .card-chapter {
       font-family: var(--font-hand);
-      font-size: 0.78rem;
+      font-size: 0.82rem;
       font-weight: 700;
       letter-spacing: 0.05em;
-      opacity: 0.65;
+      opacity: 0.75;
       margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
     }
+
+    .card-fuggler-stamp {
+      font-size: 0.72rem;
+      background: var(--accent-bg);
+      color: var(--accent);
+      border: 1px solid var(--accent);
+      border-radius: 999px;
+      padding: 1px 7px;
+      font-weight: 900;
+    }
+
     .lesson-card .card-title {
-      font-family: var(--font-hand);
-      font-size: 1.15rem;
+      font-family: var(--font-monster), var(--font-hand);
+      font-size: 1.3rem;
       font-weight: 900;
       line-height: 1.35;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
+      letter-spacing: 0.03em;
     }
-    .lesson-card .card-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+
+    .lesson-card .card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
     .tag {
       font-family: var(--font-hand);
-      font-size: 0.72rem;
+      font-size: 0.74rem;
       font-weight: 700;
       padding: 3px 10px;
       border-radius: 999px;
       border: 1.5px solid currentColor;
     }
+
     .lesson-card .card-arrow {
       position: absolute;
-      right: 18px; bottom: 18px;
-      font-size: 1.3rem;
-      opacity: 0.4;
-      transition: opacity 0.15s, transform 0.15s;
-    }
-    .lesson-card:hover .card-arrow { opacity: 1; transform: translateX(4px); }
-
-    /* 暗巷夜貓：課程卡發光特效 */
-    [data-theme="alleycat"] .lesson-card:hover {
-      box-shadow: 0 0 20px rgba(57,255,20,0.4), 4px 6px 0 rgba(0,0,0,0.8);
-    }
-    [data-theme="alleycat"] .lesson-card .card-title {
-      font-family: 'Creepster', 'Patrick Hand', cursive;
-      letter-spacing: 0.04em;
-    }
-
-    /* Coming Soon */
-    .lesson-card.coming-soon {
+      right: 18px;
+      bottom: 18px;
+      font-size: 1.4rem;
       opacity: 0.5;
+      transition: opacity 0.18s, transform 0.18s;
+    }
+
+    .lesson-card:hover .card-arrow {
+      opacity: 1;
+      transform: translateX(5px) scale(1.15);
+    }
+
+    /* Coming Soon Cards */
+    .lesson-card.coming-soon {
+      opacity: 0.6;
       cursor: default;
       background-image: repeating-linear-gradient(
-        -45deg, transparent, transparent 10px,
-        rgba(128,128,128,0.04) 10px, rgba(128,128,128,0.04) 20px
+        -45deg, transparent, transparent 12px,
+        rgba(128,128,128,0.05) 12px, rgba(128,128,128,0.05) 24px
       );
     }
-    .lesson-card.coming-soon:hover { transform: none; box-shadow: var(--shadow); }
+
+    .lesson-card.coming-soon:hover {
+      transform: none;
+      box-shadow: var(--shadow);
+    }
+
     .coming-badge {
       display: inline-block;
       font-family: var(--font-hand);
-      font-size: 0.72rem;
+      font-size: 0.74rem;
       font-weight: 700;
       background: var(--bg-canvas);
       border: 1.5px dashed var(--ink-light);
       border-radius: 999px;
       padding: 2px 10px;
       color: var(--ink-muted);
-      margin-bottom: 6px;
+      margin-bottom: 8px;
       transition: all 0.4s;
     }
 
-    /* ── Footer ── */
+    /* ══════════════════════════════════════════════
+       右下角漂浮伴讀牙齒怪 (Floating Mascot)
+    ══════════════════════════════════════════════ */
+    .corner-monster {
+      position: fixed;
+      bottom: 20px;
+      right: 24px;
+      z-index: 100;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: transform 0.2s ease;
+      filter: drop-shadow(0 6px 12px rgba(0,0,0,0.35));
+    }
+
+    .corner-monster:hover {
+      transform: translateY(-8px) scale(1.08);
+    }
+
+    .corner-bubble {
+      background: var(--bg-board);
+      color: var(--ink-primary);
+      border: 2px solid var(--accent);
+      border-radius: 12px;
+      padding: 5px 10px;
+      font-family: var(--font-hand);
+      font-size: 0.78rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+      box-shadow: 2px 3px 0 rgba(0,0,0,0.2);
+      white-space: nowrap;
+      pointer-events: none;
+      opacity: 0.95;
+      animation: bubble-float 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes bubble-float {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-3px); }
+    }
+
+    .corner-monster-img {
+      width: 72px;
+      height: 82px;
+      object-fit: contain;
+      user-select: none;
+      animation: corner-wiggle 4s ease-in-out infinite;
+    }
+
+    @keyframes corner-wiggle {
+      0%, 100% { transform: rotate(-3deg); }
+      50%      { transform: rotate(4deg); }
+    }
+
+    /* ══════════════════════════════════════════════
+       Footer
+    ══════════════════════════════════════════════ */
     footer {
       max-width: 960px;
       margin: 0 auto;
       text-align: center;
       font-family: var(--font-hand);
-      font-size: 0.88rem;
+      font-size: 0.92rem;
       color: var(--ink-muted);
       transition: color 0.4s;
     }
+
     footer a {
       color: var(--accent);
       text-decoration: none;
       font-weight: 700;
       transition: color 0.4s;
     }
-    footer a:hover { text-decoration: underline; }
 
-    /* ── 暗巷夜貓：貓爪浮水印 ── */
-    [data-theme="alleycat"] body::after {
-      content: '🐾';
-      position: fixed;
-      bottom: 20px; left: 20px;
-      font-size: 2rem;
-      opacity: 0.06;
-      pointer-events: none;
-      animation: paw-fade 4s ease-in-out infinite;
-    }
-    @keyframes paw-fade {
-      0%,100% { opacity: 0.04; transform: rotate(-10deg); }
-      50%      { opacity: 0.12; transform: rotate(10deg); }
+    footer a:hover {
+      text-decoration: underline;
     }
 
-    /* ── Responsive ── */
+    .fuggler-footer-note {
+      margin-top: 6px;
+      font-size: 0.78rem;
+      opacity: 0.75;
+    }
+
+    /* ══════════════════════════════════════════════
+       RWD（iPad 與手機支援）
+    ══════════════════════════════════════════════ */
     @media (min-width: 601px) and (max-width: 1024px) {
-      body { padding: 20px 24px 60px; }
+      body { padding: 18px 20px 80px; }
+      .hero { padding: 24px; gap: 20px; }
+      .hero-mascot-img { width: 110px; height: 125px; }
       .lessons-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
-      .lesson-card { padding: 22px; min-height: 130px; }
-      .lesson-card .card-title { font-size: 1.2rem; }
-      .lesson-card .card-arrow { font-size: 1.5rem; opacity: 0.6; }
-      .hero { padding: 28px 28px; }
-      .hero-stats { gap: 12px; }
-      .stat-pill { padding: 8px 18px; font-size: 0.95rem; }
-      .subject-icon { width: 56px; height: 56px; font-size: 2.2rem; }
+      .lesson-card { padding: 20px; min-height: 130px; }
+      .roster-btn { padding: 6px 4px; }
+      .roster-avatar-box { width: 42px; height: 42px; }
+      .corner-monster-img { width: 64px; height: 74px; }
     }
 
     @media (max-width: 600px) {
-      header { flex-wrap: wrap; }
+      header { flex-wrap: wrap; gap: 12px; }
       .stamp-badge { margin-left: 0; }
-      .hero { padding: 20px 16px; }
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 20px 16px;
+        text-align: center;
+      }
+      .hero-mascot-wrapper { margin-bottom: 8px; }
+      .hero-bubble-box::before, .hero-bubble-box::after { display: none; }
+      .hero-stats { justify-content: center; }
+      .fuggler-roster {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+      }
       .lessons-grid { grid-template-columns: 1fr; padding: 16px; }
       .subject-header { flex-wrap: wrap; }
-      .lesson-card { min-height: 110px; padding: 18px; }
-      .lesson-card .card-arrow { opacity: 0.6; }
-      .theme-bar { justify-content: flex-start; }
+      .corner-monster { bottom: 12px; right: 12px; }
+      .corner-monster-img { width: 56px; height: 64px; }
+      .corner-bubble { display: none; }
     }
   </style>
 </head>
 <body>
 
-  <!-- ── 主題切換列 ── -->
-  <div class="theme-bar">
-    <span class="theme-name-pill" id="themeLabel">✏️ 手繪白板</span>
-    <button id="btnShuffle" title="換個主題看看！">🎲 換主題</button>
+  <!-- ── 牙齒怪戰隊選擇列 ── -->
+  <div class="fuggler-bar-wrapper">
+    <div class="fuggler-bar-top">
+      <div class="fuggler-brand">
+        <span class="fuggler-tag">🦷 FUGGLER 暗巷夜貓</span>
+        <span class="theme-active-name" id="themeActiveName">💖 粉紅睡衣怪</span>
+      </div>
+      <div class="bar-actions">
+        <button id="btnShuffle" title="隨機召喚一隻牙齒怪！">🎲 隨機牙齒怪</button>
+      </div>
+    </div>
+
+    <!-- 6 隻牙齒怪點選頭像按鈕 -->
+    <ul class="fuggler-roster" id="fugglerRoster" role="tablist">
+      <!-- 由 JS 動態產生或載入 -->
+    </ul>
   </div>
 
   <!-- ── Header ── -->
   <header>
-    <div class="logo-icon" id="logoIcon">✏️</div>
+    <div class="logo-box" id="logoBox" title="點我聽牙齒怪咬一口！">
+      <img id="logoCatImg" src="assets/fugglers/fuggler_pink.png" class="logo-cat-img" alt="牙齒怪頭像" />
+      <span class="logo-tooth-badge">🦷</span>
+    </div>
     <div class="header-text">
       <h1><span class="underline" id="siteTitle">爸爸的手繪教室</span></h1>
       <p id="siteSubtitle">用動畫圖解，陪你看懂每一道題 🎯</p>
     </div>
-    <div class="stamp-badge">國中影音學習</div>
+    <div class="stamp-badge" id="stampBadge">🐾 放克牙寶 牙齒怪</div>
   </header>
 
-  <!-- ── Hero ── -->
+  <!-- ── Hero Banner（牙齒怪對話區） ── -->
   <div class="hero">
-    <div class="hero-emoji" id="heroEmoji">📚</div>
-    <p class="hero-title" id="heroTitle">
-      <span class="hi">嗨！</span>這裡是爸爸幫你做的學習網站 👋<br>
-      每一個單元都是一部<strong>手繪動畫影片</strong>，配音、圖解、例題一次搞定。<br>
-      不懂的地方可以反覆看，不用急。💪
-    </p>
-    <div class="hero-stats">
-      <div class="stat-pill">
-        <span class="dot" style="background:var(--science-color)"></span>
-        理化 1 個單元
+    <div class="hero-mascot-wrapper" id="heroMascotBox" title="戳一下牙齒怪！">
+      <img id="heroMascotImg" src="assets/fugglers/fuggler_pink.png" alt="當前主題牙齒怪" class="hero-mascot-img" />
+      <span class="mascot-click-hint">戳我咬一口 🦷</span>
+    </div>
+    <div class="hero-content">
+      <div class="hero-bubble-box">
+        <p class="hero-title" id="heroTitle">
+          <span class="hi">哈囉小主人！</span>我是粉紅睡衣牙齒怪 🦷💕<br>
+          每一個單元都是爸爸精心錄製的<strong>手繪動畫影片</strong>，配音、圖解、例題一次搞定。<br>
+          跟我一起把理化公式咬碎吞下去，不懂的地方隨時暫停反覆看！💪
+        </p>
       </div>
-      <div class="stat-pill">
-        <span class="dot" style="background:var(--math-color)"></span>
-        數學 即將上線
-      </div>
-      <div class="stat-pill">
-        <span class="dot" style="background:var(--accent)"></span>
-        持續更新中 🔄
+      <div class="hero-stats">
+        <div class="stat-pill">
+          <span class="dot" style="background:var(--science-color)"></span>
+          理化 1 個單元
+        </div>
+        <div class="stat-pill">
+          <span class="dot" style="background:var(--math-color)"></span>
+          數學 即將上線
+        </div>
+        <div class="stat-pill">
+          <span class="dot" style="background:var(--accent)"></span>
+          持續更新中 🔄
+        </div>
       </div>
     </div>
   </div>
@@ -749,7 +1116,10 @@
 
       <div class="lessons-grid">
         <a class="lesson-card" href="國二/理化/3-1_波的傳播.html" target="_blank" rel="noopener noreferrer">
-          <div class="card-chapter">第三章 • 3-1</div>
+          <div class="card-chapter">
+            <span>第三章 • 3-1</span>
+            <span class="card-fuggler-stamp">🦷 牙齒怪認證</span>
+          </div>
           <div class="card-title">波的傳播</div>
           <div class="card-tags">
             <span class="tag" style="color:var(--science-color);border-color:var(--science-color);">🌊 力學波</span>
@@ -813,126 +1183,296 @@
 
   </div>
 
+  <!-- ── 伴讀浮動牙齒怪 ── -->
+  <div class="corner-monster" id="cornerMonster" title="戳我咬一口！">
+    <div class="corner-bubble" id="cornerBubble">咬碎題目！🦷</div>
+    <img id="cornerMonsterImg" class="corner-monster-img" src="assets/fugglers/fuggler_pink.png" alt="伴讀牙齒怪" />
+  </div>
+
   <!-- ── Footer ── -->
   <footer>
-    <p>用 ❤️ 製作，for my kid ·
-      <a href="https://github.com/WilliamKHWang/junior_high_school" target="_blank">GitHub</a>
+    <p>用 ❤️ 親手打造，for my kid ·
+      <a href="https://github.com/WilliamKHWang/junior_high_school" target="_blank" rel="noopener noreferrer">GitHub</a>
+    </p>
+    <p class="fuggler-footer-note">
+      🐾 特色主題：ZURU FUGGLER 放克牙寶「暗巷夜貓 (Alley Cats)」醜萌牙齒怪系列
     </p>
   </footer>
 
   <!-- ══════════════════════════════════════════
-       主題系統 JavaScript
+       牙齒怪主題系統 JavaScript
   ══════════════════════════════════════════ -->
   <script>
-    const THEMES = [
+    // 6 隻暗巷夜貓牙齒怪主題資料配置
+    const FUGGLER_THEMES = [
       {
-        id: 'doodle',
-        name: '✏️ 手繪白板',
-        logo: '✏️',
-        heroEmoji: '📚',
-        subtitle: '用動畫圖解，陪你看懂每一道題 🎯',
-        heroMsg: '<span class="hi">嗨！</span>這裡是爸爸幫你做的學習網站 👋<br>每一個單元都是一部<strong>手繪動畫影片</strong>，配音、圖解、例題一次搞定。<br>不懂的地方可以反覆看，不用急。💪'
+        id: 'fuggler-pink',
+        name: '💖 粉紅睡衣怪',
+        shortName: '粉紅睡衣',
+        img: 'assets/fugglers/fuggler_pink.png',
+        subtitle: '穿睡衣也有一整排大真牙！🦷💤',
+        badge: '🐾 睡衣牙齒怪',
+        heroMsg: '<span class="hi">哈囉小主人！</span>我是粉紅睡衣牙齒怪 🦷💕<br>雖然我眼睛睜不太開，但我的腦袋可靈光了！<br>快跟我一起把理化公式咬碎吞下去，不懂的地方反覆看就通囉！💪',
+        quotes: [
+          '🦷 嘎吱嘎吱～知識真好吃！',
+          '你有看到我整齊漂亮的白牙齒嗎？😁',
+          '這題連我這隻怪獸都能算出來！',
+          '雖然我很醜，但我解題超溫柔～💕',
+          '穿著睡衣也要拿滿分！衝呀！'
+        ]
       },
       {
-        id: 'space',
-        name: '🌌 宇宙星空',
-        logo: '🚀',
-        heroEmoji: '🌌',
-        subtitle: '穿越銀河，征服每一道題 🚀',
-        heroMsg: '<span class="hi">太空人，出發！</span>這裡是你的宇宙學習基地 🌌<br>每個單元都是一顆<strong>知識星球</strong>，等著你降落探索！<br>把難題當隕石打掉！💥'
+        id: 'fuggler-siamese',
+        name: '🍫 暹羅焦糖怪',
+        shortName: '暹羅焦糖',
+        img: 'assets/fugglers/fuggler_siamese.png',
+        subtitle: '臉黑不是曬黑的，是讀書烤焦的！😼🦷',
+        badge: '🐾 焦糖牙齒怪',
+        heroMsg: '<span class="hi">喵～牙齒露出來！</span>我是暹羅焦糖牙齒怪 🍫🦷<br>專治各種解不開的理化魔王題，跟著我的節奏，一步一步把難題啃光光！<br>遇到大考不要慌，露出大牙笑一個！😼',
+        quotes: [
+          '臉黑是讀書烤焦的，牙齒白是認真的！🦷',
+          '咬一口理化，滿滿的知識焦糖香～🍫',
+          '別看我眼睛呆呆的，算波長快得很！',
+          '把所有不會的題目，統統交給我咬爛！',
+          '讀累了記得吃塊巧克力補充腦力！'
+        ]
       },
       {
-        id: 'candy',
-        name: '🍭 糖果樂園',
-        logo: '🍭',
-        heroEmoji: '🎠',
-        subtitle: '甜甜學習，每天都是好心情 🍬',
-        heroMsg: '<span class="hi">嗨！甜甜的你！</span>歡迎來到糖果學習樂園 🍭<br>每個單元都是一顆<strong>知識糖果</strong>，超好入口！<br>學完之後記得犒賞自己一個真正的糖果 🍫'
+        id: 'fuggler-blue',
+        name: '🌙 午夜藍毛怪',
+        shortName: '午夜藍毛',
+        img: 'assets/fugglers/fuggler_blue.png',
+        subtitle: '看到我的項鍊沒？那是一顆大板牙！🦷⚡',
+        badge: '🐾 午夜牙齒怪',
+        heroMsg: '<span class="hi">暗夜出擊！</span>我是午夜藍毛牙齒怪 🌙🦷<br>脖子上掛著招牌牙齒項鍊，在夜深人靜時陪你複習！<br>今天也要帥氣搞懂波的傳播，把理化學到嚇嚇叫！⚡',
+        quotes: [
+          '看到我的項鍊沒？正宗猛獸大板牙！🦷',
+          '深夜暗巷夜貓，專抓理化考題！🌙',
+          '深藍毛皮配粉紅項圈，這就是時尚！',
+          '不懂就多聽兩次語音朗讀，保證秒懂！',
+          '夜深了，但我們的鬥志正高昂！🔥'
+        ]
       },
       {
-        id: 'forest',
-        name: '🌿 森林探險',
-        logo: '🌿',
-        heroEmoji: '🦋',
-        subtitle: '深入知識叢林，找出答案的蹤跡 🌲',
-        heroMsg: '<span class="hi">小探險家！</span>歡迎進入知識大森林 🌿<br>每個單元都藏著<strong>寶藏</strong>，跟著地圖一步步挖掘！<br>大自然的秘密就在課本裡 🦉'
+        id: 'fuggler-gray',
+        name: '🐾 灰紋落腮鬍',
+        shortName: '灰紋大鬍',
+        img: 'assets/fugglers/fuggler_gray.png',
+        subtitle: '別摸我的大鬍子，我正在專心算波長！😼📐',
+        badge: '🐾 大鬍牙齒怪',
+        heroMsg: '<span class="hi">咳咳！</span>老夫是灰紋落腮鬍牙齒怪 🐾🦷<br>雖然長得兇巴巴，但教起理化可是頂呱呱！<br>遇到波速、頻率、週期問題，找我就對了！一把鬍子一把智慧！📐',
+        quotes: [
+          '別拔我的大白鬍子，這叫宗師氣派！😼',
+          '力學波靠介質傳播，這題考過八百次！',
+          '我的琥珀色貓眼，能看穿一切考題陷阱！',
+          '老夫當年也是考卷咬滿分的狠角色！',
+          '認真看完影片，保證你比我還厲害！'
+        ]
       },
       {
-        id: 'alleycat',
-        name: '😸 暗巷夜貓',
-        logo: '😸',
-        heroEmoji: '🦷',
-        subtitle: '黑夜裡的流浪貓也要讀書！😾',
-        heroMsg: '<span class="hi">嘿，夜貓子！</span>暗巷裡的知識獵人已就位 😸<br>每個單元都是一個<strong>深夜任務</strong>，貓爪出動抓住重點！<br>記得露出你的招牌笑容 🦷😈'
+        id: 'fuggler-white',
+        name: '🤍 鈕扣眼白怪',
+        shortName: '鈕扣眼白',
+        img: 'assets/fugglers/fuggler_white.png',
+        subtitle: '歪頭殺～我的鈕扣眼睛最會抓題目盲點！🎀🦷',
+        badge: '🐾 鈕扣牙齒怪',
+        heroMsg: '<span class="hi">歪頭殺～</span>我是鈕扣眼白白怪 🤍🦷<br>繫著漂亮粉紅蝴蝶結，露出歪斜的小白牙～<br>學習不用壓力大，笑一笑、深呼吸，跟著爸爸的手繪動畫一起輕鬆懂！🎀',
+        quotes: [
+          '我的鈕扣眼睛，能把重點釘在腦海裡！🎀',
+          '雖然我的牙齒歪歪的，但心靈很美麗！',
+          '粉紅蝴蝶結是為了慶祝今天又學會新單元！',
+          '笑一個嘛～露出你的牙齒跟我比整齊！😁',
+          '手繪白板動畫超好看，再看一次吧！'
+        ]
       },
       {
-        id: 'fire',
-        name: '🔥 火焰能量',
-        logo: '🔥',
-        heroEmoji: '⚡',
-        subtitle: '燃燒吧！把難題燒成灰！🔥',
-        heroMsg: '<span class="hi">燃起來了嗎？</span>這裡是火焰戰士的訓練場 🔥<br>每個單元都是一場<strong>能量爆發</strong>，衝破難題！<br>滿分是你的！衝！⚡💪'
+        id: 'fuggler-orange',
+        name: '🍊 橘斑八字鬍',
+        shortName: '橘斑八字',
+        img: 'assets/fugglers/fuggler_orange.png',
+        subtitle: '八字鬍翹高高，今天段考一定得高分！🦁🦷',
+        badge: '🐾 八字鬍牙怪',
+        heroMsg: '<span class="hi">喵哈哈哈！</span>我是橘斑八字鬍牙齒怪 🍊🦷<br>頂著超蓬鬆白白八字鬍和整齊暴牙，熱血幫你加滿元氣！<br>難題遇到我都得繞路走，衝刺前進拿滿分！💥',
+        quotes: [
+          '八字鬍翹起來，段考滿分自然來！🍊',
+          '咬一口甜甜橘子，再解一題理化！',
+          '暴牙才是帥哥的象徵，你說對不對！🦷',
+          '熱血燃燒中！波長 × 頻率 ＝ 波速！',
+          '我是最強橘貓，飯要吃飽，書也要讀好！'
+        ]
       }
     ];
 
-    // 每天根據日期自動選主題，但也保存手動選擇
+    // Web Audio 合成趣味咬牙「咔擦/啵」音效（純 JS，無需外連檔案）
+    function playChompSound() {
+      try {
+        const AudioContext = window.AudioContext || window.webkitAudioContext;
+        if (!AudioContext) return;
+        const ctx = new AudioContext();
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.type = 'triangle';
+        osc.frequency.setValueAtTime(360, ctx.currentTime);
+        osc.frequency.exponentialRampToValueAtTime(120, ctx.currentTime + 0.1);
+        gain.gain.setValueAtTime(0.2, ctx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.1);
+        osc.start();
+        osc.stop(ctx.currentTime + 0.1);
+      } catch (e) {
+        // 忽略無音訊支援環境
+      }
+    }
+
+    // 動態建構 6 隻牙齒怪的頭像選擇列表
+    function renderRoster() {
+      const rosterList = document.getElementById('fugglerRoster');
+      rosterList.innerHTML = '';
+
+      FUGGLER_THEMES.forEach((theme, index) => {
+        const li = document.createElement('li');
+        const btn = document.createElement('button');
+        btn.className = 'roster-btn';
+        btn.id = `rosterBtn_${theme.id}`;
+        btn.setAttribute('role', 'tab');
+        btn.setAttribute('title', `切換成 ${theme.name}`);
+        btn.setAttribute('aria-label', theme.name);
+
+        btn.innerHTML = `
+          <div class="roster-avatar-box">
+            <img class="roster-avatar-img" src="${theme.img}" alt="${theme.name}" />
+          </div>
+          <span class="roster-name">${theme.shortName}</span>
+        `;
+
+        btn.addEventListener('click', () => {
+          playChompSound();
+          applyFugglerTheme(theme);
+        });
+
+        li.appendChild(btn);
+        rosterList.appendChild(li);
+      });
+    }
+
+    // 套用特定牙齒怪主題
+    function applyFugglerTheme(theme, skipSave) {
+      const html = document.documentElement;
+      html.setAttribute('data-theme', theme.id);
+
+      // 更新頂部文字與頭像
+      document.getElementById('themeActiveName').textContent = theme.name;
+      document.getElementById('siteSubtitle').textContent    = theme.subtitle;
+      document.getElementById('stampBadge').textContent      = theme.badge;
+      document.getElementById('heroTitle').innerHTML         = theme.heroMsg;
+
+      // 更新各處圖片
+      const logoImg = document.getElementById('logoCatImg');
+      if (logoImg) logoImg.src = theme.img;
+
+      const heroImg = document.getElementById('heroMascotImg');
+      if (heroImg) {
+        heroImg.src = theme.img;
+        heroImg.style.transform = 'scale(0.85) rotate(-8deg)';
+        setTimeout(() => { heroImg.style.transform = ''; }, 250);
+      }
+
+      const cornerImg = document.getElementById('cornerMonsterImg');
+      if (cornerImg) cornerImg.src = theme.img;
+
+      // 更新頭像按鈕選取狀態
+      document.querySelectorAll('.roster-btn').forEach(btn => {
+        btn.classList.remove('active');
+        btn.setAttribute('aria-selected', 'false');
+      });
+      const activeBtn = document.getElementById(`rosterBtn_${theme.id}`);
+      if (activeBtn) {
+        activeBtn.classList.add('active');
+        activeBtn.setAttribute('aria-selected', 'true');
+      }
+
+      // 儲存狀態
+      if (!skipSave) {
+        localStorage.setItem('fugglerThemeId', theme.id);
+        localStorage.setItem('fugglerThemeDate', new Date().toDateString());
+      }
+    }
+
+    // 每日自動計算主題索引
     function getDailyThemeIndex() {
       const today = new Date();
       const dayOfYear = Math.floor(
         (today - new Date(today.getFullYear(), 0, 0)) / 86400000
       );
-      return dayOfYear % THEMES.length;
+      return dayOfYear % FUGGLER_THEMES.length;
     }
 
-    function applyTheme(theme, skipSave) {
-      const html = document.documentElement;
-      html.setAttribute('data-theme', theme.id);
+    // 載入預設或已存主題
+    function initTheme() {
+      renderRoster();
 
-      document.getElementById('themeLabel').textContent  = theme.name;
-      document.getElementById('logoIcon').textContent    = theme.logo;
-      document.getElementById('heroEmoji').textContent   = theme.heroEmoji;
-      document.getElementById('siteSubtitle').textContent = theme.subtitle;
-      document.getElementById('heroTitle').innerHTML     = theme.heroMsg;
-
-      if (!skipSave) {
-        localStorage.setItem('selectedTheme', theme.id);
-        localStorage.setItem('themeDate', new Date().toDateString());
-      }
-    }
-
-    function loadTheme() {
-      const savedId   = localStorage.getItem('selectedTheme');
-      const savedDate = localStorage.getItem('themeDate');
+      const savedId   = localStorage.getItem('fugglerThemeId');
+      const savedDate = localStorage.getItem('fugglerThemeDate');
       const todayStr  = new Date().toDateString();
 
-      // 今天已手動選過 → 沿用
+      // 若今天使用者已主動選擇，優先使用
       if (savedId && savedDate === todayStr) {
-        const found = THEMES.find(t => t.id === savedId);
-        if (found) { applyTheme(found, true); return; }
+        const found = FUGGLER_THEMES.find(t => t.id === savedId);
+        if (found) {
+          applyFugglerTheme(found, true);
+          return;
+        }
       }
 
-      // 否則用每日自動主題
-      const dailyTheme = THEMES[getDailyThemeIndex()];
-      applyTheme(dailyTheme, true);
+      // 否則使用每日自動輪播
+      const dailyIndex = getDailyThemeIndex();
+      applyFugglerTheme(FUGGLER_THEMES[dailyIndex], true);
     }
 
-    // Shuffle：隨機換一個不重複主題
+    // 隨機按鈕 Shuffle
     document.getElementById('btnShuffle').addEventListener('click', () => {
-      const current = document.documentElement.getAttribute('data-theme');
-      const others  = THEMES.filter(t => t.id !== current);
-      const next    = others[Math.floor(Math.random() * others.length)];
+      playChompSound();
+      const currentId = document.documentElement.getAttribute('data-theme');
+      const others = FUGGLER_THEMES.filter(t => t.id !== currentId);
+      const nextTheme = others[Math.floor(Math.random() * others.length)];
 
-      // 短暫縮放動畫
       const btn = document.getElementById('btnShuffle');
-      btn.style.transform = 'scale(0.9) rotate(10deg)';
+      btn.style.transform = 'scale(0.9) rotate(12deg)';
       setTimeout(() => { btn.style.transform = ''; }, 200);
 
-      applyTheme(next);
+      applyFugglerTheme(nextTheme);
     });
 
-    // 初始化
-    loadTheme();
-  </script>
+    // 點擊吉祥物觸發有趣對話與音效
+    function makeMonsterSpeak() {
+      playChompSound();
+      const currentId = document.documentElement.getAttribute('data-theme');
+      const theme = FUGGLER_THEMES.find(t => t.id === currentId) || FUGGLER_THEMES[0];
+      const randomQuote = theme.quotes[Math.floor(Math.random() * theme.quotes.length)];
 
+      // 更新泡泡文字
+      const cornerBubble = document.getElementById('cornerBubble');
+      if (cornerBubble) {
+        cornerBubble.textContent = randomQuote;
+        cornerBubble.style.transform = 'scale(1.15)';
+        setTimeout(() => { cornerBubble.style.transform = ''; }, 300);
+      }
+
+      // 抖動動畫
+      const heroImg = document.getElementById('heroMascotImg');
+      if (heroImg) {
+        heroImg.style.transform = 'scale(1.18) rotate(10deg)';
+        setTimeout(() => { heroImg.style.transform = ''; }, 260);
+      }
+    }
+
+    document.getElementById('heroMascotBox').addEventListener('click', makeMonsterSpeak);
+    document.getElementById('cornerMonster').addEventListener('click', makeMonsterSpeak);
+    document.getElementById('logoBox').addEventListener('click', makeMonsterSpeak);
+
+    // 啟動初始化
+    initTheme();
+  </script>
 </body>
 </html>
