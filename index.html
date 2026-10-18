@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="zh-TW" data-theme="doodle">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,55 +7,292 @@
   <meta name="description" content="爸爸親手打造的國中手繪動畫教室，用生動圖解學理化、數學，讓孩子輕鬆看懂每一個章節。">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Zen+Maru+Gothic:wght@400;500;700;900&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Zen+Maru+Gothic:wght@400;500;700;900&family=Noto+Sans+TC:wght@400;500;700;900&family=Creepster&display=swap" rel="stylesheet">
   <style>
     /* =============================================
-       爸爸的手繪教室 - 入口首頁樣式
-       風格：手繪白板、麥克筆彩色、圓潤溫暖
+       爸爸的手繪教室 - 多主題系統
+       6 個主題：每天自動切換，也可手動 Shuffle
        ============================================= */
+
+    /* ── 共用 token ── */
     :root {
-      --bg-canvas:    #fbf9f4;
-      --bg-board:     #ffffff;
-      --ink-primary:  #1e293b;
-      --ink-muted:    #64748b;
-      --ink-light:    #94a3b8;
-
-      /* 麥克筆色票 */
-      --cyan:         #0284c7;
-      --cyan-bg:      #e0f2fe;
-      --coral:        #e11d48;
-      --coral-bg:     #ffe4e6;
-      --yellow:       #d97706;
-      --yellow-bg:    #fef3c7;
-      --green:        #059669;
-      --green-bg:     #d1fae5;
-      --purple:       #7c3aed;
-      --purple-bg:    #ede9fe;
-      --orange:       #ea580c;
-      --orange-bg:    #ffedd5;
-
-      --border:       2.5px solid #1e293b;
-      --radius-doodle: 255px 15px 225px 15px / 15px 225px 15px 255px;
-      --radius-card:  18px;
-      --shadow:       5px 7px 0px rgba(30,41,59,0.85);
-      --shadow-hover: 7px 9px 0px rgba(30,41,59,1);
-
       --font-hand: 'Patrick Hand','Zen Maru Gothic','Noto Sans TC',cursive,sans-serif;
       --font-body: 'Zen Maru Gothic','Noto Sans TC',system-ui,sans-serif;
+      --radius-doodle: 255px 15px 225px 15px / 15px 225px 15px 255px;
+      --radius-card: 18px;
+      --transition: background 0.5s ease, color 0.5s ease, border-color 0.4s ease;
     }
 
+    /* ══════════════════════════════════════════════
+       🎨 THEME 1：手繪白板（預設）
+    ══════════════════════════════════════════════ */
+    [data-theme="doodle"] {
+      --bg-canvas:      #fbf9f4;
+      --bg-board:       #ffffff;
+      --bg-card:        #ffffff;
+      --ink-primary:    #1e293b;
+      --ink-muted:      #64748b;
+      --ink-light:      #94a3b8;
+      --accent:         #0284c7;
+      --accent-bg:      #e0f2fe;
+      --accent2:        #e11d48;
+      --accent2-bg:     #ffe4e6;
+      --highlight:      #fef3c7;
+      --border:         2.5px solid #1e293b;
+      --shadow:         5px 7px 0px rgba(30,41,59,0.85);
+      --shadow-hover:   7px 9px 0px rgba(30,41,59,1);
+      --bg-pattern:     radial-gradient(#cbd5e1 1.2px, transparent 1.2px);
+      --bg-pattern2:    linear-gradient(to right, rgba(226,232,240,0.3) 1px, transparent 1px);
+      --pattern-size:   24px 24px, 120px 120px;
+      --hero-bg:        #ffffff;
+      --pill-border:    #cbd5e1;
+      --science-hdr:    #e0f2fe;
+      --science-card:   #f0f9ff;
+      --science-color:  #0284c7;
+      --math-hdr:       #d1fae5;
+      --math-card:      #f0fdf4;
+      --math-color:     #059669;
+      --logo-emoji:     "✏️";
+      --theme-name:     "✏️ 手繪白板";
+      --tab-bg:         #1e293b;
+      --tab-color:      white;
+    }
+
+    /* ══════════════════════════════════════════════
+       🌌 THEME 2：宇宙星空
+    ══════════════════════════════════════════════ */
+    [data-theme="space"] {
+      --bg-canvas:      #0f0c29;
+      --bg-board:       #1a1650;
+      --bg-card:        #1e1b55;
+      --ink-primary:    #e2e8f0;
+      --ink-muted:      #94a3b8;
+      --ink-light:      #64748b;
+      --accent:         #818cf8;
+      --accent-bg:      #312e81;
+      --accent2:        #f472b6;
+      --accent2-bg:     #4a1942;
+      --highlight:      #312e81;
+      --border:         2px solid #818cf8;
+      --shadow:         0 0 16px rgba(129,140,248,0.4), 4px 6px 0 rgba(0,0,0,0.6);
+      --shadow-hover:   0 0 24px rgba(129,140,248,0.7), 6px 8px 0 rgba(0,0,0,0.8);
+      --bg-pattern:     radial-gradient(rgba(255,255,255,0.15) 1px, transparent 1px);
+      --bg-pattern2:    radial-gradient(rgba(248,180,246,0.08) 2px, transparent 2px);
+      --pattern-size:   30px 30px, 90px 90px;
+      --hero-bg:        #1a1650;
+      --pill-border:    #4338ca;
+      --science-hdr:    #1e1b55;
+      --science-card:   #1a1650;
+      --science-color:  #818cf8;
+      --math-hdr:       #2d1b69;
+      --math-card:      #1e1b55;
+      --math-color:     #c084fc;
+      --logo-emoji:     "🚀";
+      --theme-name:     "🌌 宇宙星空";
+      --tab-bg:         #818cf8;
+      --tab-color:      #0f0c29;
+    }
+
+    /* ══════════════════════════════════════════════
+       🍭 THEME 3：糖果樂園
+    ══════════════════════════════════════════════ */
+    [data-theme="candy"] {
+      --bg-canvas:      #fff0f6;
+      --bg-board:       #ffffff;
+      --bg-card:        #fff5f9;
+      --ink-primary:    #831843;
+      --ink-muted:      #be185d;
+      --ink-light:      #f9a8d4;
+      --accent:         #ec4899;
+      --accent-bg:      #fce7f3;
+      --accent2:        #a855f7;
+      --accent2-bg:     #f3e8ff;
+      --highlight:      #fef9c3;
+      --border:         2.5px solid #ec4899;
+      --shadow:         4px 6px 0 rgba(236,72,153,0.4);
+      --shadow-hover:   6px 8px 0 rgba(236,72,153,0.6);
+      --bg-pattern:     radial-gradient(#fda4af 1.5px, transparent 1.5px);
+      --bg-pattern2:    radial-gradient(#c4b5fd 1px, transparent 1px);
+      --pattern-size:   20px 20px, 40px 40px;
+      --hero-bg:        #ffffff;
+      --pill-border:    #f9a8d4;
+      --science-hdr:    #fce7f3;
+      --science-card:   #fff0f9;
+      --science-color:  #ec4899;
+      --math-hdr:       #f3e8ff;
+      --math-card:      #faf5ff;
+      --math-color:     #a855f7;
+      --logo-emoji:     "🍭";
+      --theme-name:     "🍭 糖果樂園";
+      --tab-bg:         #ec4899;
+      --tab-color:      white;
+    }
+
+    /* ══════════════════════════════════════════════
+       🌿 THEME 4：森林探險
+    ══════════════════════════════════════════════ */
+    [data-theme="forest"] {
+      --bg-canvas:      #f0fdf4;
+      --bg-board:       #ffffff;
+      --bg-card:        #f0fdf4;
+      --ink-primary:    #14532d;
+      --ink-muted:      #15803d;
+      --ink-light:      #86efac;
+      --accent:         #16a34a;
+      --accent-bg:      #dcfce7;
+      --accent2:        #ca8a04;
+      --accent2-bg:     #fef9c3;
+      --highlight:      #fefce8;
+      --border:         2.5px solid #14532d;
+      --shadow:         5px 7px 0 rgba(20,83,45,0.6);
+      --shadow-hover:   7px 9px 0 rgba(20,83,45,0.85);
+      --bg-pattern:     radial-gradient(#86efac 1.2px, transparent 1.2px);
+      --bg-pattern2:    linear-gradient(135deg, rgba(134,239,172,0.15) 25%, transparent 25%);
+      --pattern-size:   28px 28px, 56px 56px;
+      --hero-bg:        #ffffff;
+      --pill-border:    #86efac;
+      --science-hdr:    #dcfce7;
+      --science-card:   #f0fdf4;
+      --science-color:  #16a34a;
+      --math-hdr:       #fef9c3;
+      --math-card:      #fefce8;
+      --math-color:     #ca8a04;
+      --logo-emoji:     "🌿";
+      --theme-name:     "🌿 森林探險";
+      --tab-bg:         #14532d;
+      --tab-color:      white;
+    }
+
+    /* ══════════════════════════════════════════════
+       😸 THEME 5：暗巷夜貓 × FUGGLER（放克牙寶）
+       靈感：ZURU FUGGLER Alley Cats — 醜萌流浪貓
+       深夜街頭 · 霓虹 · 人類牙齒 · 毛茸茸
+    ══════════════════════════════════════════════ */
+    [data-theme="alleycat"] {
+      --bg-canvas:      #0d0d12;
+      --bg-board:       #111118;
+      --bg-card:        #18181f;
+      --ink-primary:    #f1f5f9;
+      --ink-muted:      #94a3b8;
+      --ink-light:      #475569;
+      --accent:         #39ff14;        /* 霓虹貓眼綠 */
+      --accent-bg:      #0a2a0a;
+      --accent2:        #ff6b35;        /* 街燈橘 */
+      --accent2-bg:     #2a1200;
+      --highlight:      #1a1a0a;
+      --border:         2px solid #39ff14;
+      --shadow:         0 0 12px rgba(57,255,20,0.35), 4px 6px 0 rgba(0,0,0,0.9);
+      --shadow-hover:   0 0 24px rgba(57,255,20,0.6), 6px 8px 0 rgba(0,0,0,1);
+      --bg-pattern:     repeating-linear-gradient(0deg, transparent, transparent 40px, rgba(57,255,20,0.03) 40px, rgba(57,255,20,0.03) 41px);
+      --bg-pattern2:    repeating-linear-gradient(90deg, transparent, transparent 40px, rgba(57,255,20,0.02) 40px, rgba(57,255,20,0.02) 41px);
+      --pattern-size:   auto, auto;
+      --hero-bg:        #111118;
+      --pill-border:    #39ff14;
+      --science-hdr:    #0a1a0a;
+      --science-card:   #0d160d;
+      --science-color:  #39ff14;
+      --math-hdr:       #1a0e00;
+      --math-card:      #150c00;
+      --math-color:     #ff6b35;
+      --logo-emoji:     "😸";
+      --theme-name:     "😸 暗巷夜貓";
+      --tab-bg:         #39ff14;
+      --tab-color:      #0d0d12;
+    }
+
+    /* ══════════════════════════════════════════════
+       🔥 THEME 6：火焰能量
+    ══════════════════════════════════════════════ */
+    [data-theme="fire"] {
+      --bg-canvas:      #1c0a00;
+      --bg-board:       #2a0f00;
+      --bg-card:        #2a0f00;
+      --ink-primary:    #fed7aa;
+      --ink-muted:      #fb923c;
+      --ink-light:      #7c2d12;
+      --accent:         #f97316;
+      --accent-bg:      #431407;
+      --accent2:        #fbbf24;
+      --accent2-bg:     #3b1c00;
+      --highlight:      #3b1c00;
+      --border:         2px solid #f97316;
+      --shadow:         0 0 12px rgba(249,115,22,0.4), 4px 6px 0 rgba(0,0,0,0.8);
+      --shadow-hover:   0 0 24px rgba(249,115,22,0.7), 6px 8px 0 rgba(0,0,0,1);
+      --bg-pattern:     radial-gradient(rgba(249,115,22,0.12) 1.5px, transparent 1.5px);
+      --bg-pattern2:    radial-gradient(rgba(251,191,36,0.06) 2px, transparent 2px);
+      --pattern-size:   24px 24px, 60px 60px;
+      --hero-bg:        #2a0f00;
+      --pill-border:    #9a3412;
+      --science-hdr:    #431407;
+      --science-card:   #2a0f00;
+      --science-color:  #f97316;
+      --math-hdr:       #3b1c00;
+      --math-card:      #2a1500;
+      --math-color:     #fbbf24;
+      --logo-emoji:     "🔥";
+      --theme-name:     "🔥 火焰能量";
+      --tab-bg:         #f97316;
+      --tab-color:      white;
+    }
+
+    /* ══════════════════════════════════════════════
+       全域樣式（使用 CSS 變數）
+    ══════════════════════════════════════════════ */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { transition: var(--transition); }
 
     body {
       font-family: var(--font-body);
       background-color: var(--bg-canvas);
-      background-image:
-        radial-gradient(#cbd5e1 1.2px, transparent 1.2px),
-        linear-gradient(to right, rgba(226,232,240,0.3) 1px, transparent 1px);
-      background-size: 24px 24px, 120px 120px;
+      background-image: var(--bg-pattern), var(--bg-pattern2);
+      background-size: var(--pattern-size);
       color: var(--ink-primary);
       min-height: 100vh;
       padding: 24px 20px 60px;
+      transition: background-color 0.5s ease, color 0.4s ease;
+    }
+
+    /* ── 主題切換 Bar ── */
+    .theme-bar {
+      max-width: 960px;
+      margin: 0 auto 16px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 10px;
+    }
+    .theme-name-pill {
+      font-family: var(--font-hand);
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--ink-muted);
+      letter-spacing: 0.02em;
+      opacity: 0.85;
+    }
+    #btnShuffle {
+      font-family: var(--font-hand);
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 6px 14px;
+      background: var(--accent-bg);
+      color: var(--accent);
+      border: 2px solid var(--accent);
+      border-radius: var(--radius-doodle);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.15s ease;
+      box-shadow: 2px 3px 0 rgba(0,0,0,0.3);
+    }
+    #btnShuffle:hover {
+      transform: translate(-1px,-1px) rotate(-2deg);
+      box-shadow: 3px 5px 0 rgba(0,0,0,0.4);
+    }
+    #btnShuffle:active {
+      transform: translate(1px,1px);
+      box-shadow: 1px 1px 0 rgba(0,0,0,0.3);
     }
 
     /* ── Header ── */
@@ -69,8 +306,9 @@
     .logo-icon {
       font-size: 3rem;
       line-height: 1;
-      filter: drop-shadow(2px 3px 0 rgba(0,0,0,0.15));
+      filter: drop-shadow(2px 3px 0 rgba(0,0,0,0.25));
       animation: wiggle 3s ease-in-out infinite;
+      transition: all 0.4s ease;
     }
     @keyframes wiggle {
       0%,100% { transform: rotate(-4deg); }
@@ -81,8 +319,10 @@
       font-size: clamp(1.6rem, 4vw, 2.4rem);
       font-weight: 900;
       line-height: 1.2;
+      color: var(--ink-primary);
       position: relative;
       display: inline-block;
+      transition: color 0.4s;
     }
     .header-text h1 .underline {
       position: relative;
@@ -93,49 +333,81 @@
       position: absolute;
       left: 0; bottom: 2px;
       width: 100%; height: 10px;
-      background: var(--yellow-bg);
+      background: var(--highlight);
       z-index: -1;
       border-radius: 4px;
+      transition: background 0.4s;
     }
     .header-text p {
       font-size: 0.95rem;
       color: var(--ink-muted);
       margin-top: 4px;
       font-family: var(--font-hand);
+      transition: color 0.4s;
     }
     .stamp-badge {
       margin-left: auto;
-      background: var(--coral-bg);
+      background: var(--accent2-bg);
       border: var(--border);
+      border-color: var(--accent2);
       border-radius: var(--radius-doodle);
       padding: 8px 16px;
       font-family: var(--font-hand);
       font-size: 0.85rem;
       font-weight: 700;
-      color: var(--coral);
+      color: var(--accent2);
       transform: rotate(2deg);
-      box-shadow: 3px 4px 0 rgba(30,41,59,0.5);
+      box-shadow: 3px 4px 0 rgba(0,0,0,0.3);
       white-space: nowrap;
+      transition: all 0.4s;
+    }
+
+    /* ── 暗巷夜貓特殊字體 ── */
+    [data-theme="alleycat"] .header-text h1 {
+      font-family: 'Creepster', 'Patrick Hand', cursive;
+      text-shadow: 0 0 12px rgba(57,255,20,0.5);
+      letter-spacing: 0.04em;
+    }
+    [data-theme="alleycat"] .stamp-badge {
+      animation: neon-pulse 1.8s ease-in-out infinite;
+    }
+    @keyframes neon-pulse {
+      0%,100% { box-shadow: 3px 4px 0 rgba(0,0,0,0.6), 0 0 8px rgba(255,107,53,0.4); }
+      50%      { box-shadow: 3px 4px 0 rgba(0,0,0,0.6), 0 0 20px rgba(255,107,53,0.8); }
+    }
+    [data-theme="alleycat"] .logo-icon {
+      animation: cat-wiggle 2s ease-in-out infinite;
+      filter: drop-shadow(0 0 8px rgba(57,255,20,0.6));
+    }
+    @keyframes cat-wiggle {
+      0%   { transform: rotate(-6deg) scale(1); }
+      30%  { transform: rotate(8deg) scale(1.05); }
+      60%  { transform: rotate(-4deg) scale(1); }
+      80%  { transform: rotate(6deg) scale(1.03); }
+      100% { transform: rotate(-6deg) scale(1); }
     }
 
     /* ── Hero Banner ── */
     .hero {
       max-width: 960px;
       margin: 0 auto 48px;
-      background: white;
+      background: var(--hero-bg);
       border: var(--border);
       border-radius: var(--radius-card);
       box-shadow: var(--shadow);
       padding: 32px 36px;
       position: relative;
       overflow: hidden;
+      transition: background 0.4s, border-color 0.4s, box-shadow 0.4s;
     }
-    .hero::before {
-      content: '📚';
+    .hero-emoji {
       position: absolute;
       right: 32px; top: 24px;
       font-size: 5rem;
-      opacity: 0.08;
+      opacity: 0.09;
+      transition: all 0.4s;
+      pointer-events: none;
+      user-select: none;
     }
     .hero-title {
       font-family: var(--font-hand);
@@ -143,8 +415,9 @@
       font-weight: 700;
       line-height: 1.7;
       color: var(--ink-primary);
+      transition: color 0.4s;
     }
-    .hero-title .hi { color: var(--cyan); }
+    .hero-title .hi { color: var(--accent); transition: color 0.4s; }
     .hero-stats {
       display: flex;
       gap: 20px;
@@ -156,17 +429,16 @@
       align-items: center;
       gap: 8px;
       background: var(--bg-canvas);
-      border: 2px solid #cbd5e1;
+      border: 2px solid var(--pill-border);
       border-radius: 999px;
       padding: 6px 16px;
       font-family: var(--font-hand);
       font-size: 0.88rem;
       font-weight: 700;
+      color: var(--ink-primary);
+      transition: all 0.4s;
     }
-    .stat-pill .dot {
-      width: 10px; height: 10px;
-      border-radius: 50%;
-    }
+    .stat-pill .dot { width: 10px; height: 10px; border-radius: 50%; }
 
     /* ── Section Title ── */
     .section-title {
@@ -180,32 +452,31 @@
       font-family: var(--font-hand);
       font-size: 1.25rem;
       font-weight: 900;
-      background: var(--ink-primary);
-      color: white;
+      background: var(--tab-bg);
+      color: var(--tab-color);
       padding: 6px 20px;
       border-radius: 8px 8px 0 0;
-      position: relative;
+      transition: background 0.4s, color 0.4s;
     }
     .section-title .grade-label {
       font-family: var(--font-hand);
       font-size: 0.9rem;
       color: var(--ink-muted);
       font-weight: 700;
+      transition: color 0.4s;
     }
 
     /* ── Subject Groups ── */
-    .subjects-wrapper {
-      max-width: 960px;
-      margin: 0 auto 48px;
-    }
+    .subjects-wrapper { max-width: 960px; margin: 0 auto 48px; }
 
     .subject-group {
-      background: white;
+      background: var(--bg-board);
       border: var(--border);
       border-radius: var(--radius-card);
       box-shadow: var(--shadow);
       margin-bottom: 32px;
       overflow: hidden;
+      transition: background 0.4s, border-color 0.4s, box-shadow 0.4s;
     }
 
     .subject-header {
@@ -213,7 +484,8 @@
       align-items: center;
       gap: 14px;
       padding: 18px 24px;
-      border-bottom: 2px solid #e2e8f0;
+      border-bottom: 2px solid var(--pill-border);
+      transition: background 0.4s, border-color 0.4s;
     }
     .subject-icon {
       font-size: 2rem;
@@ -222,17 +494,21 @@
       border: var(--border);
       display: flex; align-items: center; justify-content: center;
       flex-shrink: 0;
-      box-shadow: 3px 4px 0 rgba(30,41,59,0.5);
+      background: var(--bg-canvas);
+      box-shadow: 3px 4px 0 rgba(0,0,0,0.3);
+      transition: all 0.4s;
     }
     .subject-info h2 {
       font-family: var(--font-hand);
       font-size: 1.3rem;
       font-weight: 900;
+      transition: color 0.4s;
     }
     .subject-info p {
       font-size: 0.82rem;
       color: var(--ink-muted);
       margin-top: 2px;
+      transition: color 0.4s;
     }
     .subject-count {
       margin-left: auto;
@@ -242,9 +518,23 @@
       padding: 4px 12px;
       border-radius: 999px;
       border: 2px solid;
+      background: var(--bg-canvas);
+      transition: all 0.4s;
     }
 
-    /* ── Lesson Cards Grid ── */
+    /* 理化 */
+    .group-science .subject-header { background: var(--science-hdr); }
+    .group-science .subject-info h2 { color: var(--science-color); }
+    .group-science .subject-count { color: var(--science-color); border-color: var(--science-color); }
+    .group-science .lesson-card  { background: var(--science-card); }
+
+    /* 數學 */
+    .group-math .subject-header { background: var(--math-hdr); }
+    .group-math .subject-info h2 { color: var(--math-color); }
+    .group-math .subject-count  { color: var(--math-color); border-color: var(--math-color); }
+    .group-math .lesson-card    { background: var(--math-card); }
+
+    /* ── Lesson Cards ── */
     .lessons-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
@@ -259,8 +549,8 @@
       cursor: pointer;
       text-decoration: none;
       color: var(--ink-primary);
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
-      box-shadow: 4px 5px 0 rgba(30,41,59,0.7);
+      transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.4s, border-color 0.4s;
+      box-shadow: var(--shadow);
       position: relative;
       display: block;
       overflow: hidden;
@@ -271,7 +561,6 @@
     }
     .lesson-card:active {
       transform: translate(2px, 2px);
-      box-shadow: 2px 3px 0 rgba(30,41,59,0.7);
     }
     .lesson-card .card-chapter {
       font-family: var(--font-hand);
@@ -288,11 +577,7 @@
       line-height: 1.35;
       margin-bottom: 10px;
     }
-    .lesson-card .card-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-    }
+    .lesson-card .card-tags { display: flex; flex-wrap: wrap; gap: 6px; }
     .tag {
       font-family: var(--font-hand);
       font-size: 0.72rem;
@@ -308,54 +593,40 @@
       opacity: 0.4;
       transition: opacity 0.15s, transform 0.15s;
     }
-    .lesson-card:hover .card-arrow {
-      opacity: 1;
-      transform: translateX(4px);
+    .lesson-card:hover .card-arrow { opacity: 1; transform: translateX(4px); }
+
+    /* 暗巷夜貓：課程卡發光特效 */
+    [data-theme="alleycat"] .lesson-card:hover {
+      box-shadow: 0 0 20px rgba(57,255,20,0.4), 4px 6px 0 rgba(0,0,0,0.8);
+    }
+    [data-theme="alleycat"] .lesson-card .card-title {
+      font-family: 'Creepster', 'Patrick Hand', cursive;
+      letter-spacing: 0.04em;
     }
 
-    /* Coming Soon card */
+    /* Coming Soon */
     .lesson-card.coming-soon {
-      opacity: 0.55;
+      opacity: 0.5;
       cursor: default;
       background-image: repeating-linear-gradient(
-        -45deg,
-        transparent,
-        transparent 10px,
-        rgba(0,0,0,0.02) 10px,
-        rgba(0,0,0,0.02) 20px
+        -45deg, transparent, transparent 10px,
+        rgba(128,128,128,0.04) 10px, rgba(128,128,128,0.04) 20px
       );
     }
-    .lesson-card.coming-soon:hover {
-      transform: none;
-      box-shadow: 4px 5px 0 rgba(30,41,59,0.7);
-    }
+    .lesson-card.coming-soon:hover { transform: none; box-shadow: var(--shadow); }
     .coming-badge {
       display: inline-block;
       font-family: var(--font-hand);
       font-size: 0.72rem;
       font-weight: 700;
-      background: #f1f5f9;
-      border: 1.5px dashed #94a3b8;
+      background: var(--bg-canvas);
+      border: 1.5px dashed var(--ink-light);
       border-radius: 999px;
       padding: 2px 10px;
       color: var(--ink-muted);
       margin-bottom: 6px;
+      transition: all 0.4s;
     }
-
-    /* ── 科目色彩 ── */
-    /* 理化 */
-    .group-science .subject-header { background: var(--cyan-bg); }
-    .group-science .subject-icon { background: white; }
-    .group-science .subject-info h2 { color: var(--cyan); }
-    .group-science .subject-count { color: var(--cyan); border-color: var(--cyan); background: white; }
-    .group-science .lesson-card { background: #f0f9ff; }
-
-    /* 數學 */
-    .group-math .subject-header { background: var(--green-bg); }
-    .group-math .subject-icon { background: white; }
-    .group-math .subject-info h2 { color: var(--green); }
-    .group-math .subject-count { color: var(--green); border-color: var(--green); background: white; }
-    .group-math .lesson-card { background: #f0fdf4; }
 
     /* ── Footer ── */
     footer {
@@ -365,24 +636,37 @@
       font-family: var(--font-hand);
       font-size: 0.88rem;
       color: var(--ink-muted);
+      transition: color 0.4s;
     }
-    footer .heart { color: var(--coral); }
     footer a {
-      color: var(--cyan);
+      color: var(--accent);
       text-decoration: none;
       font-weight: 700;
+      transition: color 0.4s;
     }
     footer a:hover { text-decoration: underline; }
 
-    /* ── Responsive ── */
+    /* ── 暗巷夜貓：貓爪浮水印 ── */
+    [data-theme="alleycat"] body::after {
+      content: '🐾';
+      position: fixed;
+      bottom: 20px; left: 20px;
+      font-size: 2rem;
+      opacity: 0.06;
+      pointer-events: none;
+      animation: paw-fade 4s ease-in-out infinite;
+    }
+    @keyframes paw-fade {
+      0%,100% { opacity: 0.04; transform: rotate(-10deg); }
+      50%      { opacity: 0.12; transform: rotate(10deg); }
+    }
 
-    /* iPad (768px ~ 1024px) */
+    /* ── Responsive ── */
     @media (min-width: 601px) and (max-width: 1024px) {
       body { padding: 20px 24px 60px; }
       .lessons-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
       .lesson-card { padding: 22px; min-height: 130px; }
       .lesson-card .card-title { font-size: 1.2rem; }
-      /* 加大觸控區域 */
       .lesson-card .card-arrow { font-size: 1.5rem; opacity: 0.6; }
       .hero { padding: 28px 28px; }
       .hero-stats { gap: 12px; }
@@ -390,7 +674,6 @@
       .subject-icon { width: 56px; height: 56px; font-size: 2.2rem; }
     }
 
-    /* 手機 (≤600px) */
     @media (max-width: 600px) {
       header { flex-wrap: wrap; }
       .stamp-badge { margin-left: 0; }
@@ -399,39 +682,47 @@
       .subject-header { flex-wrap: wrap; }
       .lesson-card { min-height: 110px; padding: 18px; }
       .lesson-card .card-arrow { opacity: 0.6; }
+      .theme-bar { justify-content: flex-start; }
     }
   </style>
 </head>
 <body>
 
+  <!-- ── 主題切換列 ── -->
+  <div class="theme-bar">
+    <span class="theme-name-pill" id="themeLabel">✏️ 手繪白板</span>
+    <button id="btnShuffle" title="換個主題看看！">🎲 換主題</button>
+  </div>
+
   <!-- ── Header ── -->
   <header>
-    <div class="logo-icon">✏️</div>
+    <div class="logo-icon" id="logoIcon">✏️</div>
     <div class="header-text">
-      <h1><span class="underline">爸爸的手繪教室</span></h1>
-      <p>用動畫圖解，陪你看懂每一道題 🎯</p>
+      <h1><span class="underline" id="siteTitle">爸爸的手繪教室</span></h1>
+      <p id="siteSubtitle">用動畫圖解，陪你看懂每一道題 🎯</p>
     </div>
     <div class="stamp-badge">國中影音學習</div>
   </header>
 
   <!-- ── Hero ── -->
   <div class="hero">
-    <p class="hero-title">
+    <div class="hero-emoji" id="heroEmoji">📚</div>
+    <p class="hero-title" id="heroTitle">
       <span class="hi">嗨！</span>這裡是爸爸幫你做的學習網站 👋<br>
       每一個單元都是一部<strong>手繪動畫影片</strong>，配音、圖解、例題一次搞定。<br>
       不懂的地方可以反覆看，不用急。💪
     </p>
     <div class="hero-stats">
       <div class="stat-pill">
-        <span class="dot" style="background:var(--cyan)"></span>
+        <span class="dot" style="background:var(--science-color)"></span>
         理化 1 個單元
       </div>
       <div class="stat-pill">
-        <span class="dot" style="background:var(--green)"></span>
+        <span class="dot" style="background:var(--math-color)"></span>
         數學 即將上線
       </div>
       <div class="stat-pill">
-        <span class="dot" style="background:var(--yellow)"></span>
+        <span class="dot" style="background:var(--accent)"></span>
         持續更新中 🔄
       </div>
     </div>
@@ -457,20 +748,17 @@
       </div>
 
       <div class="lessons-grid">
-
-        <!-- ✅ 已上線 -->
         <a class="lesson-card" href="國二/理化/3-1_波的傳播.html" target="_blank" rel="noopener noreferrer">
           <div class="card-chapter">第三章 • 3-1</div>
           <div class="card-title">波的傳播</div>
           <div class="card-tags">
-            <span class="tag" style="color:var(--cyan);border-color:var(--cyan);">🌊 力學波</span>
-            <span class="tag" style="color:var(--purple);border-color:var(--purple);">🔊 語音朗讀</span>
-            <span class="tag" style="color:var(--green);border-color:var(--green);">✅ 可看</span>
+            <span class="tag" style="color:var(--science-color);border-color:var(--science-color);">🌊 力學波</span>
+            <span class="tag" style="color:var(--accent);border-color:var(--accent);">🔊 語音朗讀</span>
+            <span class="tag" style="color:var(--math-color);border-color:var(--math-color);">✅ 可看</span>
           </div>
           <div class="card-arrow">→</div>
         </a>
 
-        <!-- 即將上線 -->
         <div class="lesson-card coming-soon">
           <span class="coming-badge">✏️ 製作中</span>
           <div class="card-chapter">第三章 • 3-2</div>
@@ -488,7 +776,6 @@
             <span class="tag" style="color:var(--ink-light);border-color:var(--ink-light);">🔜 即將上線</span>
           </div>
         </div>
-
       </div>
     </div>
 
@@ -528,10 +815,124 @@
 
   <!-- ── Footer ── -->
   <footer>
-    <p>用 <span class="heart">❤️</span> 製作，for my kid · 
+    <p>用 ❤️ 製作，for my kid ·
       <a href="https://github.com/WilliamKHWang/junior_high_school" target="_blank">GitHub</a>
     </p>
   </footer>
+
+  <!-- ══════════════════════════════════════════
+       主題系統 JavaScript
+  ══════════════════════════════════════════ -->
+  <script>
+    const THEMES = [
+      {
+        id: 'doodle',
+        name: '✏️ 手繪白板',
+        logo: '✏️',
+        heroEmoji: '📚',
+        subtitle: '用動畫圖解，陪你看懂每一道題 🎯',
+        heroMsg: '<span class="hi">嗨！</span>這裡是爸爸幫你做的學習網站 👋<br>每一個單元都是一部<strong>手繪動畫影片</strong>，配音、圖解、例題一次搞定。<br>不懂的地方可以反覆看，不用急。💪'
+      },
+      {
+        id: 'space',
+        name: '🌌 宇宙星空',
+        logo: '🚀',
+        heroEmoji: '🌌',
+        subtitle: '穿越銀河，征服每一道題 🚀',
+        heroMsg: '<span class="hi">太空人，出發！</span>這裡是你的宇宙學習基地 🌌<br>每個單元都是一顆<strong>知識星球</strong>，等著你降落探索！<br>把難題當隕石打掉！💥'
+      },
+      {
+        id: 'candy',
+        name: '🍭 糖果樂園',
+        logo: '🍭',
+        heroEmoji: '🎠',
+        subtitle: '甜甜學習，每天都是好心情 🍬',
+        heroMsg: '<span class="hi">嗨！甜甜的你！</span>歡迎來到糖果學習樂園 🍭<br>每個單元都是一顆<strong>知識糖果</strong>，超好入口！<br>學完之後記得犒賞自己一個真正的糖果 🍫'
+      },
+      {
+        id: 'forest',
+        name: '🌿 森林探險',
+        logo: '🌿',
+        heroEmoji: '🦋',
+        subtitle: '深入知識叢林，找出答案的蹤跡 🌲',
+        heroMsg: '<span class="hi">小探險家！</span>歡迎進入知識大森林 🌿<br>每個單元都藏著<strong>寶藏</strong>，跟著地圖一步步挖掘！<br>大自然的秘密就在課本裡 🦉'
+      },
+      {
+        id: 'alleycat',
+        name: '😸 暗巷夜貓',
+        logo: '😸',
+        heroEmoji: '🦷',
+        subtitle: '黑夜裡的流浪貓也要讀書！😾',
+        heroMsg: '<span class="hi">嘿，夜貓子！</span>暗巷裡的知識獵人已就位 😸<br>每個單元都是一個<strong>深夜任務</strong>，貓爪出動抓住重點！<br>記得露出你的招牌笑容 🦷😈'
+      },
+      {
+        id: 'fire',
+        name: '🔥 火焰能量',
+        logo: '🔥',
+        heroEmoji: '⚡',
+        subtitle: '燃燒吧！把難題燒成灰！🔥',
+        heroMsg: '<span class="hi">燃起來了嗎？</span>這裡是火焰戰士的訓練場 🔥<br>每個單元都是一場<strong>能量爆發</strong>，衝破難題！<br>滿分是你的！衝！⚡💪'
+      }
+    ];
+
+    // 每天根據日期自動選主題，但也保存手動選擇
+    function getDailyThemeIndex() {
+      const today = new Date();
+      const dayOfYear = Math.floor(
+        (today - new Date(today.getFullYear(), 0, 0)) / 86400000
+      );
+      return dayOfYear % THEMES.length;
+    }
+
+    function applyTheme(theme, skipSave) {
+      const html = document.documentElement;
+      html.setAttribute('data-theme', theme.id);
+
+      document.getElementById('themeLabel').textContent  = theme.name;
+      document.getElementById('logoIcon').textContent    = theme.logo;
+      document.getElementById('heroEmoji').textContent   = theme.heroEmoji;
+      document.getElementById('siteSubtitle').textContent = theme.subtitle;
+      document.getElementById('heroTitle').innerHTML     = theme.heroMsg;
+
+      if (!skipSave) {
+        localStorage.setItem('selectedTheme', theme.id);
+        localStorage.setItem('themeDate', new Date().toDateString());
+      }
+    }
+
+    function loadTheme() {
+      const savedId   = localStorage.getItem('selectedTheme');
+      const savedDate = localStorage.getItem('themeDate');
+      const todayStr  = new Date().toDateString();
+
+      // 今天已手動選過 → 沿用
+      if (savedId && savedDate === todayStr) {
+        const found = THEMES.find(t => t.id === savedId);
+        if (found) { applyTheme(found, true); return; }
+      }
+
+      // 否則用每日自動主題
+      const dailyTheme = THEMES[getDailyThemeIndex()];
+      applyTheme(dailyTheme, true);
+    }
+
+    // Shuffle：隨機換一個不重複主題
+    document.getElementById('btnShuffle').addEventListener('click', () => {
+      const current = document.documentElement.getAttribute('data-theme');
+      const others  = THEMES.filter(t => t.id !== current);
+      const next    = others[Math.floor(Math.random() * others.length)];
+
+      // 短暫縮放動畫
+      const btn = document.getElementById('btnShuffle');
+      btn.style.transform = 'scale(0.9) rotate(10deg)';
+      setTimeout(() => { btn.style.transform = ''; }, 200);
+
+      applyTheme(next);
+    });
+
+    // 初始化
+    loadTheme();
+  </script>
 
 </body>
 </html>
