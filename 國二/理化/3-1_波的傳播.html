@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>國二理化 3-1 波的傳播 | 手繪白板動畫教室</title>
+  <meta name="description" content="專為國二視覺學習者打造的手繪塗鴉動畫教學平台，圖解波的傳播、力學波與橫縱波、波速公式與例題拆解。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Zen+Maru+Gothic:wght@400;500;700;900&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- 頂部導覽列 -->
+  <header class="app-header">
+    <div class="logo-group">
+      <span class="doodle-icon">✏️</span>
+      <div class="title-wrap">
+        <h1 class="main-title">3-1 波的傳播 <span class="tag-badge">手繪白板動畫教室</span></h1>
+        <p class="subtitle">國二理化 • 視覺圖解與原題拆解 • 忠實對照講義與自修</p>
+      </div>
+    </div>
+    <div class="header-tools">
+      <button id="btnVoiceToggle" class="btn-doodle tool-btn active" title="開啟/關閉語音朗讀">
+        <span class="icon">🔊</span> <span class="label">語音朗讀：開</span>
+      </button>
+      <button id="btnViewScript" class="btn-doodle tool-btn" title="查看完整分鏡腳本">
+        <span class="icon">📜</span> <span class="label">分鏡腳本</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- 主體區域 -->
+  <main class="main-stage">
+    <!-- 左側 / 上方：手繪動畫視窗 -->
+    <section class="board-card">
+      <div class="board-header">
+        <div class="chapter-indicator">
+          <span class="scene-badge" id="sceneBadge">SCENE 1 / 8</span>
+          <h2 class="scene-title" id="sceneTitle">開場：學習目標</h2>
+        </div>
+        <div class="source-citation" id="sourceCitation">
+          <span class="pin">📌</span> 出處：講義 P.82 / 自修 P.1
+        </div>
+      </div>
+
+      <!-- 白板主畫布區域 -->
+      <div class="canvas-container" id="canvasContainer">
+        <!-- Canvas 動態物理/幾何展示 -->
+        <canvas id="doodleCanvas" width="900" height="420"></canvas>
+        
+        <!-- 動態覆蓋元素層（手繪塗鴉氣泡、分步文字與提示） -->
+        <div class="interactive-overlay" id="interactiveOverlay">
+          <!-- 根據各幕動態注入內容 -->
+        </div>
+      </div>
+
+      <!-- 教師親切口播旁白字幕卡 -->
+      <div class="teacher-speech-box">
+        <div class="teacher-avatar">
+          <span class="avatar-face">👩‍🏫</span>
+          <span class="teacher-name">理化老師 (自然女聲)</span>
+        </div>
+        <div class="speech-content-wrap">
+          <div class="speech-text" id="speechText">
+            載入中...
+          </div>
+          <div class="speech-progress-bar">
+            <div class="speech-progress" id="speechProgress"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 動畫播放控制列 -->
+      <div class="playback-controls">
+        <div class="control-left">
+          <button id="btnPrevScene" class="btn-icon" title="上一幕">⏮️</button>
+          <button id="btnPlayPause" class="btn-play" title="播放 / 暫停">
+            <span id="playIcon">▶️</span>
+          </button>
+          <button id="btnNextScene" class="btn-icon" title="下一幕">⏭️</button>
+          <span class="time-readout" id="timeReadout">00:00 / 03:20</span>
+        </div>
+
+        <div class="timeline-slider-wrap">
+          <input type="range" id="sceneScrubber" min="0" max="7" value="0" step="1">
+          <div class="timeline-ticks" id="timelineTicks">
+            <!-- 8 個章節節點點 -->
+          </div>
+        </div>
+
+        <div class="control-right">
+          <button id="btnResetScene" class="btn-icon" title="重新播放本幕">🔄</button>
+          <div class="speed-toggle">
+            <span class="speed-label">速度:</span>
+            <button class="btn-speed active" data-speed="1.0">1.0x</button>
+            <button class="btn-speed" data-speed="1.25">1.25x</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 右側 / 下方：八大章節選單與互動強化卡 -->
+    <aside class="sidebar-panel">
+      <!-- 幕次切換標籤 -->
+      <div class="nav-section">
+        <h3 class="panel-heading">🎬 動畫分鏡目錄（8幕）</h3>
+        <nav class="scene-nav-list" id="sceneNavList">
+          <!-- 動態生成 8 幕按鈕 -->
+        </nav>
+      </div>
+
+      <!-- 即時重點摘要卡 -->
+      <div class="key-summary-card">
+        <h3 class="panel-heading">💡 本幕核心一眼懂</h3>
+        <div class="summary-body" id="summaryBody">
+          <!-- 動態載入重點條目 -->
+        </div>
+      </div>
+
+      <!-- 書本版本異同小偵探 -->
+      <div class="compare-card" id="compareCard">
+        <div class="compare-header">
+          <span class="magnifier">🔍</span> <strong>教材對照小偵探</strong>
+        </div>
+        <p class="compare-desc" id="compareDesc">
+          講義稱「力學波」，自修特別括號備註「又稱機械波」。
+        </p>
+      </div>
+    </aside>
+  </main>
+
+  <!-- 彈出視窗：完整分鏡腳本檢視器 -->
+  <dialog class="modal-dialog" id="scriptModal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>📜 3-1「波的傳播」手繪風白板動畫完整分鏡腳本</h3>
+        <button id="btnCloseModal" class="btn-close">✖</button>
+      </div>
+      <div class="modal-body" id="scriptModalBody">
+        <!-- 腳本文檔內容 -->
+      </div>
+    </div>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>
