@@ -375,12 +375,30 @@
     footer a:hover { text-decoration: underline; }
 
     /* ── Responsive ── */
+
+    /* iPad (768px ~ 1024px) */
+    @media (min-width: 601px) and (max-width: 1024px) {
+      body { padding: 20px 24px 60px; }
+      .lessons-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+      .lesson-card { padding: 22px; min-height: 130px; }
+      .lesson-card .card-title { font-size: 1.2rem; }
+      /* 加大觸控區域 */
+      .lesson-card .card-arrow { font-size: 1.5rem; opacity: 0.6; }
+      .hero { padding: 28px 28px; }
+      .hero-stats { gap: 12px; }
+      .stat-pill { padding: 8px 18px; font-size: 0.95rem; }
+      .subject-icon { width: 56px; height: 56px; font-size: 2.2rem; }
+    }
+
+    /* 手機 (≤600px) */
     @media (max-width: 600px) {
       header { flex-wrap: wrap; }
       .stamp-badge { margin-left: 0; }
-      .hero { padding: 24px 20px; }
-      .lessons-grid { grid-template-columns: 1fr; }
+      .hero { padding: 20px 16px; }
+      .lessons-grid { grid-template-columns: 1fr; padding: 16px; }
       .subject-header { flex-wrap: wrap; }
+      .lesson-card { min-height: 110px; padding: 18px; }
+      .lesson-card .card-arrow { opacity: 0.6; }
     }
   </style>
 </head>
