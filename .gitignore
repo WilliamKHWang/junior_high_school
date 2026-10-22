@@ -1,0 +1,13 @@
+# macOS 系統檔
+.DS_Store
+
+# 本機教學製作資料：影片、旁白、課本與舊版封存
+/local-content/*
+!/local-content/README.md
+
+# 避免影片誤放到其他資料夾後被提交
+*.mp4
+*.mov
+*.m4v
+*.avi
+*.mkv
